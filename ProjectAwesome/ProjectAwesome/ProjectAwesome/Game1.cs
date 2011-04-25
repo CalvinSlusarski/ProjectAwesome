@@ -18,6 +18,9 @@ namespace ProjectAwesome
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        // Added By Calvin for drawing the boat
+        Vector2 mPosition = new Vector2(0, 0);
+        Texture2D mSpriteTexture;
 
         public Game1()
         {
@@ -48,6 +51,9 @@ namespace ProjectAwesome
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            // Added by Calvin to load boat image
+            // Create a new SpriteBatch, which can be used to draw textures.
+            mSpriteTexture = this.Content.Load<Texture2D>("Boat");
         }
 
         /// <summary>
@@ -84,6 +90,10 @@ namespace ProjectAwesome
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            // Added by Calvin to draw boat
+            spriteBatch.Begin();
+            spriteBatch.Draw(mSpriteTexture, mPosition, Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

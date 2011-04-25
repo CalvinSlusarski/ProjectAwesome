@@ -112,6 +112,7 @@
     <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Boat.png" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
