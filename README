@@ -1,0 +1,12 @@
+ProjectAwesome README
+--Version .1 TODO--
+--------------------------------------------------------------------------------------------
+Story #	Category	Story								Who?	Status	Priority	Estimate
+1.1		Epic	I want to able to steer my boat 				ready		a	3
+1.1.1	Story	Keyboard to move								ready		a	2
+1.1.2	Story	click to shoot									ready		a	2
+1.1.3	Story	w to go forward									ready		a	2
+1.2		Epic	I want to see Projectiles when i click			ready		a	3
+1.2.1	Story	Mouse bound										ready		a	1
+1.2.2	Story	I want to create a moving object				ready		a	1
+--------------------------------------------------------------------------------------------
