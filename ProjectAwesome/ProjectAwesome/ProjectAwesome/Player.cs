@@ -54,22 +54,27 @@ namespace ProjectAwesome
         private void UpdateMovement(KeyboardState aCurrentKeyboardState)
         {
             mSpeed = 0;
+            //Dan Reed added WASD support
             if (mCurrentState == State.Moving)
             {
-                if (aCurrentKeyboardState.IsKeyDown(Keys.Left) == true)
+                if ((aCurrentKeyboardState.IsKeyDown(Keys.Left) == true)||
+                    (aCurrentKeyboardState.IsKeyDown(Keys.A) == true))
                 {
                     mRotation -= ROTATE_SPEED;
                 }
-                else if (aCurrentKeyboardState.IsKeyDown(Keys.Right) == true)
+                else if ((aCurrentKeyboardState.IsKeyDown(Keys.Right) == true)||
+                    (aCurrentKeyboardState.IsKeyDown(Keys.D) == true))
                 {
                     mRotation += ROTATE_SPEED;
                 }
 
-                if (aCurrentKeyboardState.IsKeyDown(Keys.Up) == true)
+                if ((aCurrentKeyboardState.IsKeyDown(Keys.Up) == true)||
+                    (aCurrentKeyboardState.IsKeyDown(Keys.W) == true))
                 {
                     mSpeed = PLAYER_SPEED;
                 }
-                else if (aCurrentKeyboardState.IsKeyDown(Keys.Down) == true)
+                else if ((aCurrentKeyboardState.IsKeyDown(Keys.Down) == true)||
+                    (aCurrentKeyboardState.IsKeyDown(Keys.S) == true))
                 {
                     mSpeed = PLAYER_SPEED*-1;
                 }
