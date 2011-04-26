@@ -96,7 +96,7 @@ namespace ProjectAwesome
                     if (aProjectile.Visible == false)
                     {
                         aCreateNew = false;
-                        aProjectile.Fire(Position + new Vector2(Size.Width / 2, Size.Height / 2),
+                        aProjectile.Fire(Position,
                             200, mRotation);
                         break;
                     }
@@ -106,7 +106,7 @@ namespace ProjectAwesome
                 {
                     Projectile aProjectile = new Projectile();
                     aProjectile.LoadContent(mContentManager);
-                    aProjectile.Fire(Position + new Vector2(Size.Width / 2, Size.Height / 2),
+                    aProjectile.Fire(Position,
                         200, mRotation);
                     mBullets.Add(aProjectile);
                 }
