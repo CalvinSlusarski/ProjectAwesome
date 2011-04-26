@@ -97,7 +97,7 @@ namespace ProjectAwesome
                     {
                         aCreateNew = false;
                         aProjectile.Fire(Position,
-                            200, mRotation);
+                            400, mRotation);// adjusted fire Speed
                         break;
                     }
                 }
@@ -140,7 +140,7 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.W) == true))
                 {
                     mSpeed = PLAYER_SPEED;
-                    camera.Move(Position, true);
+                    //camera.Move(Position, true);
 
 
                 }
@@ -148,7 +148,7 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.S) == true))
                 {
                     mSpeed = PLAYER_SPEED * -1;
-                    camera.Move(Position, true);
+                    //camera.Move(Position, true);
                 }
                 
             }

@@ -21,7 +21,7 @@ namespace ProjectAwesome
         //public static Camera camera;
         // Added By Calvin for drawing the boat
         Player mPlayerSprite;
-        Camera camera;
+        Camera camera = new Camera();
 
         public Game1()
         {
@@ -48,10 +48,11 @@ namespace ProjectAwesome
         /// </summary>
         protected override void LoadContent()
         {
+            //Draw your game here
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // init Camera
-            camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
+           // camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
 
 
             mPlayerSprite = new Player(ref camera);
@@ -81,7 +82,8 @@ namespace ProjectAwesome
 
             //Added by calvin
             mPlayerSprite.Update(gameTime);
-
+            //Added by calvin moves camera to player position
+            camera.Position = mPlayerSprite.Position;
             base.Update(gameTime);
         }
 
@@ -95,7 +97,14 @@ namespace ProjectAwesome
 
             // TODO: Add your drawing code here
             // Added by Calvin to draw boat
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                          BlendState.AlphaBlend,
+                          null,
+                          null,
+                          null,
+                          null,
+                          camera.Transform(GraphicsDevice));
             mPlayerSprite.Draw(this.spriteBatch);
             
             spriteBatch.End();
