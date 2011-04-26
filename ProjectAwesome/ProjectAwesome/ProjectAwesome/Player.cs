@@ -40,6 +40,8 @@ namespace ProjectAwesome
         
 
         KeyboardState mPreviousKeyboardState;
+        MouseState mouseStateCurrent;
+        MouseState mouseStatePrevious;
         public Player(ref Camera camera)
         {
             this.camera = camera;
@@ -62,11 +64,12 @@ namespace ProjectAwesome
         public void Update(GameTime theGameTime)
         {
             KeyboardState aCurrentKeyboardState = Keyboard.GetState();
+            mouseStateCurrent = Mouse.GetState(); 
 
             UpdateMovement(aCurrentKeyboardState);
             UpdateProjectile(theGameTime, aCurrentKeyboardState);
             mPreviousKeyboardState = aCurrentKeyboardState;
-
+            mouseStatePrevious = mouseStateCurrent;
             base.Update(theGameTime, mSpeed, mRotation);
         }
         private void UpdateProjectile(GameTime theGameTime, KeyboardState aCurrentKeyboardState)
@@ -76,7 +79,8 @@ namespace ProjectAwesome
                 aProjectile.Update(theGameTime);
             }
             
-            if (aCurrentKeyboardState.IsKeyDown(Keys.Space) == true && mPreviousKeyboardState.IsKeyDown(Keys.Space) == false)
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.Space) == true && mPreviousKeyboardState.IsKeyDown(Keys.Space) == false)||
+                (mouseStateCurrent.LeftButton == ButtonState.Pressed && mouseStatePrevious.LeftButton != ButtonState.Pressed))
             {
                 ShootProjectile();
             }
