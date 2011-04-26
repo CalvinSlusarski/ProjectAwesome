@@ -18,8 +18,10 @@ namespace ProjectAwesome
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        //public static Camera camera;
         // Added By Calvin for drawing the boat
         Player mPlayerSprite;
+        Camera camera;
 
         public Game1()
         {
@@ -48,8 +50,11 @@ namespace ProjectAwesome
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            // Added By calvin
-            mPlayerSprite = new Player();
+            // init Camera
+            camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
+
+
+            mPlayerSprite = new Player(ref camera);
             mPlayerSprite.LoadContent(this.Content);
             
         }

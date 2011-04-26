@@ -22,6 +22,8 @@ namespace ProjectAwesome
         const int MOVE_LEFT = -1;
         const int MOVE_RIGHT = 1;
         const float ROTATE_SPEED = 0.025f;
+        Camera camera;
+        
         //Enumerator states used to asking if player is moving
         enum State
         {
@@ -37,7 +39,10 @@ namespace ProjectAwesome
         int bulletCount = 0;
 
         KeyboardState mPreviousKeyboardState;
-
+        public Player(ref Camera camera)
+        {
+            this.camera = camera;
+        }
         public void LoadContent(ContentManager theContentManager)
         {
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
@@ -76,11 +81,15 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.W) == true))
                 {
                     mSpeed = PLAYER_SPEED;
+                    camera.Move(Position, true);
+
+
                 }
                 else if ((aCurrentKeyboardState.IsKeyDown(Keys.Down) == true)||
                     (aCurrentKeyboardState.IsKeyDown(Keys.S) == true))
                 {
                     mSpeed = PLAYER_SPEED*-1;
+                    camera.Move(Position, true);
                 }
                 //test code for projectile --DR
                 if ((aCurrentKeyboardState.IsKeyDown(Keys.Space)==true))
