@@ -16,6 +16,7 @@ namespace ProjectAwesome
         //constants for adjusting game values
         const string PROJECTILE_ASSETNAME = "Projectile";
         const int projectileSpeed = 250;
+        const int MAX_DISTANCE = 500;
         const int START_POSITION_X = 150;
         const int START_POSITION_Y = 150;
 
@@ -25,17 +26,17 @@ namespace ProjectAwesome
             Moving
         }
         //init state to moving
-        State mCurrentState = State.Moving;
+        //State mCurrentState = State.Moving;
 
-        int mSpeed = 0;
+        
         float mRotation = 0.0f;
+        public Boolean Visible = false;
+        Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
+        int mSpeed = 300;
+        
 
         KeyboardState mPreviousKeyboardState;
-        public Projectile(int mx, int my)
-        {
-            Position.X = mx;
-            Position.Y = my;
-        }
+       
         //load content
         public void LoadContent(ContentManager theContentManager)
         {
@@ -46,19 +47,50 @@ namespace ProjectAwesome
         //update object
         public void Update(GameTime theGameTime)
         {
-            KeyboardState aCurrentKeyboardState = Keyboard.GetState();
+            if (Vector2.Distance(mStartPosition, Position) > MAX_DISTANCE)
+            {
+                Visible = false;
 
-            UpdateMovement();
+            }
+            
+            if (Visible == true)
+            {
 
-            mPreviousKeyboardState = aCurrentKeyboardState;
-
-            base.Update(theGameTime, mSpeed, mRotation);
+                base.Update(theGameTime, mSpeed, mRotation);
+            }
         }
         //updates movement of the bullet while on screen
         private void UpdateMovement()
         {
             Position.Y++;
         }
+        public override void Draw(SpriteBatch theSpriteBatch)
+        {
+
+            if (Visible == true)
+            {
+
+                base.Draw(theSpriteBatch);
+
+            }
+
+        }
+        public void Fire(Vector2 theStartPosition, int theSpeed, float theDirection)
+        {
+
+            Position = theStartPosition;
+
+            mStartPosition = theStartPosition;
+
+            mSpeed = theSpeed;
+
+            mRotation = theDirection;
+
+            Visible = true;
+
+        }
+
+
         
     }
 }
