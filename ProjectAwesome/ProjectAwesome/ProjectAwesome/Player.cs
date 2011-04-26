@@ -85,7 +85,8 @@ namespace ProjectAwesome
                 //test code for projectile --DR
                 if ((aCurrentKeyboardState.IsKeyDown(Keys.Space)==true))
                 {
-                    mBulletArr[bulletCount] = new Projectile();
+                    mBulletArr[bulletCount] = new Projectile
+                        ((int)Position.X,(int)Position.Y);
                     bulletCount++;
                 }
             }

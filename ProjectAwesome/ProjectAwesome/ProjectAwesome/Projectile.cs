@@ -31,7 +31,11 @@ namespace ProjectAwesome
         float mRotation = 0.0f;
 
         KeyboardState mPreviousKeyboardState;
-
+        public Projectile(int mx, int my)
+        {
+            Position.X = mx;
+            Position.Y = my;
+        }
         //load content
         public void LoadContent(ContentManager theContentManager)
         {
@@ -55,5 +59,6 @@ namespace ProjectAwesome
         {
             Position.Y++;
         }
+        
     }
 }
