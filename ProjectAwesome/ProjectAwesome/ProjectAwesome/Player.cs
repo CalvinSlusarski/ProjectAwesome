@@ -12,6 +12,7 @@ namespace ProjectAwesome
 {
     class Player: Sprite
     {
+        // Constants for adjusting game variables
         const string PLAYER_ASSETNAME = "Boat";
         const int START_POSITION_X = 125;
         const int START_POSITION_Y = 245;
@@ -21,7 +22,7 @@ namespace ProjectAwesome
         const int MOVE_LEFT = -1;
         const int MOVE_RIGHT = 1;
         const float ROTATE_SPEED = 0.025f;
-
+        //Enumerator states used to asking if player is moving
         enum State
         {
             Moving
@@ -49,14 +50,12 @@ namespace ProjectAwesome
 
             base.Update(theGameTime, mSpeed, mRotation);
         }
-
+        //Assume player is not moving
         private void UpdateMovement(KeyboardState aCurrentKeyboardState)
         {
+            mSpeed = 0;
             if (mCurrentState == State.Moving)
             {
-
-                mSpeed = 0;
-
                 if (aCurrentKeyboardState.IsKeyDown(Keys.Left) == true)
                 {
                     mRotation -= ROTATE_SPEED;
