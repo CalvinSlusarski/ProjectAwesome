@@ -92,6 +92,10 @@ namespace ProjectAwesome
             // Added by Calvin to draw boat
             spriteBatch.Begin();
             mPlayerSprite.Draw(this.spriteBatch);
+            foreach (Projectile p in mPlayerSprite.mBulletArr)
+            {
+                p.Draw(this.spriteBatch);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);

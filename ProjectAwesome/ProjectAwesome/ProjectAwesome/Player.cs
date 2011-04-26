@@ -32,6 +32,10 @@ namespace ProjectAwesome
         int mSpeed = 0;
         float mRotation = 0.0f;
 
+        //projectile array to hold bullets
+        public Projectile[] mBulletArr = new Projectile[5];
+        int bulletCount = 0;
+
         KeyboardState mPreviousKeyboardState;
 
         public void LoadContent(ContentManager theContentManager)
@@ -77,6 +81,12 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.S) == true))
                 {
                     mSpeed = PLAYER_SPEED*-1;
+                }
+                //test code for projectile --DR
+                if ((aCurrentKeyboardState.IsKeyDown(Keys.Space)==true))
+                {
+                    mBulletArr[bulletCount] = new Projectile();
+                    bulletCount++;
                 }
             }
         }
