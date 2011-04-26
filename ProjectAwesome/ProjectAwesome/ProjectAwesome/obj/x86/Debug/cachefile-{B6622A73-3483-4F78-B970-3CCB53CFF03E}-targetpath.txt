@@ -1,2 +1,3 @@
 Content\Boat.xnb
 Content\Projectile.xnb
+Content\debugFont.xnb

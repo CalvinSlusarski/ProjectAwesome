@@ -21,10 +21,10 @@ namespace ProjectAwesome
         const int START_POSITION_Y = 150;
 
         //enum to detect state
-        enum State
-        {
-            Moving
-        }
+        //enum State
+        //{
+        //    Moving
+        //}
         //init state to moving
         //State mCurrentState = State.Moving;
 
@@ -35,7 +35,7 @@ namespace ProjectAwesome
         int mSpeed = 300;
         
 
-        KeyboardState mPreviousKeyboardState;
+        //KeyboardState mPreviousKeyboardState;
        
         //load content
         public void LoadContent(ContentManager theContentManager)
@@ -50,7 +50,6 @@ namespace ProjectAwesome
             if (Vector2.Distance(mStartPosition, Position) > MAX_DISTANCE)
             {
                 Visible = false;
-
             }
             
             if (Visible == true)
@@ -59,11 +58,7 @@ namespace ProjectAwesome
                 base.Update(theGameTime, mSpeed, mRotation);
             }
         }
-        //updates movement of the bullet while on screen
-        private void UpdateMovement()
-        {
-            Position.Y++;
-        }
+        
         public override void Draw(SpriteBatch theSpriteBatch)
         {
 

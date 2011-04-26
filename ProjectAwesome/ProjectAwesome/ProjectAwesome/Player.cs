@@ -93,7 +93,7 @@ namespace ProjectAwesome
                     {
                         aCreateNew = false;
                         aProjectile.Fire(Position + new Vector2(Size.Width / 2, Size.Height / 2),
-                            200, 1.0f);
+                            200, mRotation);
                         break;
                     }
                 }
@@ -121,11 +121,15 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.A) == true))
                 {
                     mRotation -= ROTATE_SPEED;
+                    if (mRotation < -360.0f)
+                        mRotation = mRotation % 360.0f;
                 }
                 else if ((aCurrentKeyboardState.IsKeyDown(Keys.Right) == true) ||
                     (aCurrentKeyboardState.IsKeyDown(Keys.D) == true))
                 {
                     mRotation += ROTATE_SPEED;
+                    if (mRotation > 360.0f)
+                        mRotation = mRotation % 360.0f;
                 }
 
                 if ((aCurrentKeyboardState.IsKeyDown(Keys.Up) == true) ||
