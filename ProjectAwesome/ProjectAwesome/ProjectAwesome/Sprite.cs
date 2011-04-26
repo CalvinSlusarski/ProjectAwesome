@@ -53,18 +53,16 @@ namespace ProjectAwesome
         }
 
         //Update the Sprite and change it's position based on the passed in speed, direction and elapsed time.
-        public void Update(GameTime theGameTime, Vector2 theSpeed, Vector2 theDirection, float theRotation)
+        public void Update(GameTime theGameTime, int theSpeed, float theRotation)
         {
-            Position += theDirection * theSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
+            Position.X += (float)(theSpeed * Math.Cos(Rotation))*(float)theGameTime.ElapsedGameTime.TotalSeconds;
+            Position.Y += (float)(theSpeed * Math.Sin(Rotation))*(float)theGameTime.ElapsedGameTime.TotalSeconds;
             Rotation = theRotation;
         }
 
         //Draw the sprite to the screen
         public void Draw(SpriteBatch theSpriteBatch)
         {
-            //theSpriteBatch.Draw(mSpriteTexture, Position,
-            //    new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
-            //    Color.White, 0.0f, Vector2.Zero, Scale, SpriteEffects.None, 0);
             theSpriteBatch.Draw(mSpriteTexture, Position,
             new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
             Color.White, Rotation, Center, Scale, SpriteEffects.None, 0);

@@ -20,16 +20,15 @@ namespace ProjectAwesome
         const int MOVE_DOWN = 1;
         const int MOVE_LEFT = -1;
         const int MOVE_RIGHT = 1;
-        const float ROTATE_SPEED = 0.1f;
+        const float ROTATE_SPEED = 0.025f;
 
         enum State
         {
-            Walking
+            Moving
         }
-        State mCurrentState = State.Walking;
+        State mCurrentState = State.Moving;
 
-        Vector2 mDirection = Vector2.Zero;
-        Vector2 mSpeed = Vector2.Zero;
+        int mSpeed = 0;
         float mRotation = 0.0f;
 
         KeyboardState mPreviousKeyboardState;
@@ -48,38 +47,32 @@ namespace ProjectAwesome
 
             mPreviousKeyboardState = aCurrentKeyboardState;
 
-            base.Update(theGameTime, mSpeed, mDirection, mRotation);
+            base.Update(theGameTime, mSpeed, mRotation);
         }
 
         private void UpdateMovement(KeyboardState aCurrentKeyboardState)
         {
-            if (mCurrentState == State.Walking)
+            if (mCurrentState == State.Moving)
             {
-                mSpeed = Vector2.Zero;
-                mDirection = Vector2.Zero;
+
+                mSpeed = 0;
 
                 if (aCurrentKeyboardState.IsKeyDown(Keys.Left) == true)
                 {
-                    //mSpeed.X = PLAYER_SPEED;
-                    //mDirection.X = MOVE_LEFT;
                     mRotation -= ROTATE_SPEED;
                 }
                 else if (aCurrentKeyboardState.IsKeyDown(Keys.Right) == true)
                 {
-                    //mSpeed.X = PLAYER_SPEED;
-                    //mDirection.X = MOVE_RIGHT;
                     mRotation += ROTATE_SPEED;
                 }
 
                 if (aCurrentKeyboardState.IsKeyDown(Keys.Up) == true)
                 {
-                    mSpeed.Y = PLAYER_SPEED;
-                    mDirection.Y = MOVE_UP;
+                    mSpeed = PLAYER_SPEED;
                 }
                 else if (aCurrentKeyboardState.IsKeyDown(Keys.Down) == true)
                 {
-                    mSpeed.Y = PLAYER_SPEED;
-                    mDirection.Y = MOVE_DOWN;
+                    mSpeed = PLAYER_SPEED*-1;
                 }
             }
         }
