@@ -19,8 +19,7 @@ namespace ProjectAwesome
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         // Added By Calvin for drawing the boat
-        Vector2 mPosition = new Vector2(0, 0);
-        Texture2D mSpriteTexture;
+        Player mPlayerSprite;
 
         public Game1()
         {
@@ -49,11 +48,10 @@ namespace ProjectAwesome
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
-            // Added by Calvin to load boat image
-            // Create a new SpriteBatch, which can be used to draw textures.
-            mSpriteTexture = this.Content.Load<Texture2D>("Boat");
+            // Added By calvin
+            mPlayerSprite = new Player();
+            mPlayerSprite.LoadContent(this.Content);
+            
         }
 
         /// <summary>
@@ -76,7 +74,8 @@ namespace ProjectAwesome
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            //Added by calvin
+            mPlayerSprite.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -92,7 +91,7 @@ namespace ProjectAwesome
             // TODO: Add your drawing code here
             // Added by Calvin to draw boat
             spriteBatch.Begin();
-            spriteBatch.Draw(mSpriteTexture, mPosition, Color.White);
+            mPlayerSprite.Draw(this.spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
