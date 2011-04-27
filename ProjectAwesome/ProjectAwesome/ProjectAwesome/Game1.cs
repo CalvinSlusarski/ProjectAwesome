@@ -94,7 +94,10 @@ namespace ProjectAwesome
             camera.Position = mPlayerSprite.Position;
 
             //added by Dan, spawns enemies
+            /*******************************************************************
+             * ----------uncomment to reenable enemy spawns---------------------
             UpdateEnemies(gameTime, new Random());
+             * */
             base.Update(gameTime);
         }
         //updates the enemy list
