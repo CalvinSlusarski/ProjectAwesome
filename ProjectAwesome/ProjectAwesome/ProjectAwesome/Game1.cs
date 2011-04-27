@@ -108,7 +108,7 @@ namespace ProjectAwesome
             //added by Dan, spawns enemies
             ///*******************************************************************
             // * ----------uncomment to reenable enemy spawns---------------------
-            //UpdateEnemies(gameTime, new Random());
+            UpdateEnemies(gameTime, new Random());
             // * */
 
             //added by Dan, 
@@ -156,7 +156,7 @@ namespace ProjectAwesome
                 aEnemy.Update(theGameTime);
             }
             int tmp = generator.Next();
-            if (tmp%1000 <= 2)
+            if (tmp%500 <= 20)
             {
                 SpawnEnemy();
             }
@@ -164,30 +164,70 @@ namespace ProjectAwesome
         //spawns enemies to the list
         private void SpawnEnemy()
         {
+            //random # gen and a flag to see fi we need to create a new enemy or not
             Random gen = new Random();
-            //if (mCurrentState == State.Moving)
-            //{
-                bool aCreateNew = true;
+            bool aCreateNew = true;
 
-                foreach (Enemy aEnemy in Enemies)
-                {
-                    if (aEnemy.alive == false)
-                    {
-                        aCreateNew = false;
-                        aEnemy.Spawn(mPlayerSprite.Position,
-                            100, (gen.Next() % 360.0f));// adjusted fire Speed
-                        break;
-                    }
-                }
+            //this figures out where the enemy will spawn. 
+            Vector2 enemyStart = new Vector2(mPlayerSprite.Position.X, mPlayerSprite.Position.Y);
+            int spawnRange = 200;
+            int spawnDistance = 100;
+            float enemyRotation = 0.0f;
+            float deltaX, deltaY;
+            //figure out how far away the enemy should spawn
+            // spawns at least as far as the distance, with a variance of range
+            int distance = (gen.Next() % spawnRange) + spawnDistance;
+            //make a random angle 0-360, get the theta in the triangle
+            enemyRotation = (float)gen.Next() % 360.0f;
+            float theta = enemyRotation % 90;
+            //use that angle and the distance to find the start location of your enemy
+            deltaX = distance * (float)Math.Sin(theta);
+            deltaY = distance * (float)Math.Cos(theta);
 
-                if (aCreateNew == true)
+            //depending on what the angle of rotation is, modify the enemy start
+            if (enemyRotation < 90)
+            {
+                enemyStart = new Vector2((mPlayerSprite.Position.X + deltaX),
+                                        (mPlayerSprite.Position.Y - deltaY));
+            }
+            else if (enemyRotation >= 90 && enemyRotation < 180)
+            {
+                enemyStart = new Vector2((mPlayerSprite.Position.X + deltaX),
+                                        (mPlayerSprite.Position.Y + deltaY));
+            }
+            else if (enemyRotation >= 180 && enemyRotation < 270)
+            {
+                enemyStart = new Vector2((mPlayerSprite.Position.X - deltaX),
+                                        (mPlayerSprite.Position.Y + deltaY));
+            }
+            else
+            {
+                enemyStart = new Vector2((mPlayerSprite.Position.X - deltaX),
+                                        (mPlayerSprite.Position.Y - deltaY));
+            }
+            //take the angle, and modify it to point the other way so enemy spawns pointing towards player
+            //enemyRotation = (enemyRotation + 180) % 360;
+            //now go through the enemy list to see if you can respawn an existing enemy
+            foreach (Enemy aEnemy in Enemies)
+            {
+     
+                if (aEnemy.alive == false)
                 {
-                    Enemy aEnemy = new Enemy();
-                    aEnemy.LoadContent(this.Content);
-                    aEnemy.Spawn(mPlayerSprite.Position,
-                        100, (gen.Next()%360.0f));
-                    Enemies.Add(aEnemy);
+                    aCreateNew = false;
+                    aEnemy.Spawn(enemyStart,
+                        100, enemyRotation);// adjusted fire Speed
+                    break;
                 }
+            }
+            //if all enemies are full, creat a new and add to list
+            if (aCreateNew == true)
+            {
+                Enemy aEnemy = new Enemy();
+                aEnemy.LoadContent(this.Content);
+                aEnemy.Spawn(enemyStart,
+                    100, enemyRotation);
+                Enemies.Add(aEnemy);
+            }
             //}
         }
         /// <summary>

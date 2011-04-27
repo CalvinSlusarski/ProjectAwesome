@@ -112,7 +112,7 @@ namespace ProjectAwesome
             mSpeed = 30;
             int tmp = generator.Next();
             // 75% of the time they should turn left
-            if (tmp % 1000 <= 53)
+            if (tmp % 1000 <= 103)
             {
                 mRotation -= ROTATE_SPEED;
                 if (mRotation < -360.0f)
@@ -120,7 +120,7 @@ namespace ProjectAwesome
             }
             else if (tmp % 1000 >= 950)
             {
-                mRotation -= ROTATE_SPEED;
+                mRotation += ROTATE_SPEED;
                 if (mRotation > 360.0f)
                     mRotation = mRotation % 360.0f;
             }
