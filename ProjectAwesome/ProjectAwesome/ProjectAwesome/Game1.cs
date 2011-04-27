@@ -106,17 +106,52 @@ namespace ProjectAwesome
             camera.Position = mPlayerSprite.Position;
 
             //added by Dan, spawns enemies
-            ///*******************************************************************
-            // * ----------uncomment to reenable enemy spawns---------------------
             UpdateEnemies(gameTime, new Random());
-            // * */
-
-            //added by Dan, 
-            //handles player bullet->enemy
-            //and enemy bullet ->player
-            //collisions using the intersect method I wrote for sprite
+            //added by Dan, handles enemy movement AI
+            UpdateEnemyMovements();
+            //added by Dan,handles bullet collisions
             UpdateCollisions();
             base.Update(gameTime);
+        }
+        private void UpdateEnemyMovements()
+        {
+            //for each enemy
+            foreach (Enemy anEnemy in Enemies)
+            {
+                float deltaX;
+                float deltaY;
+                Vector2 anEnd;
+                int rayDistance = 700;
+                deltaX = rayDistance * (float)Math.Sin(anEnemy.Rotation);
+                deltaY = rayDistance * (float)Math.Cos(anEnemy.Rotation);
+                if(anEnemy.Rotation <= (MathHelper.Pi/2.0f))
+                {
+                    anEnd = new Vector2(anEnemy.Position.X + deltaX,
+                                        anEnemy.Position.Y - deltaY);
+                }
+                else if((anEnemy.Rotation > (MathHelper.Pi/2.0f)) && (anEnemy.Rotation <= MathHelper.Pi))
+                {
+                    anEnd = new Vector2(anEnemy.Position.X + deltaX,
+                                        anEnemy.Position.Y + deltaY);
+                }
+                else if((anEnemy.Rotation > (MathHelper.Pi)) && (anEnemy.Rotation <= (3.0f*MathHelper.Pi)/2.0f))
+                {
+                    anEnd = new Vector2(anEnemy.Position.X - deltaX,
+                                        anEnemy.Position.Y + deltaY);
+                }
+                else
+                {
+                    anEnd = new Vector2(anEnemy.Position.X - deltaX,
+                                        anEnemy.Position.Y - deltaY);
+                }
+
+                Ray2D aRay = new Ray2D(anEnemy.Position, anEnd);
+                Rectangle playerRect = new Rectangle((int)mPlayerSprite.Position.X,(int)mPlayerSprite.Position.Y, mPlayerSprite.Size.Width, mPlayerSprite.Size.Height);
+                if(!(aRay.Intersects(playerRect)))
+                {
+                    anEnemy.Rotation += 5.8f;
+                }
+            }
         }
         private void UpdateCollisions()
         {
@@ -171,15 +206,17 @@ namespace ProjectAwesome
             //this figures out where the enemy will spawn. 
             Vector2 enemyStart = new Vector2(mPlayerSprite.Position.X, mPlayerSprite.Position.Y);
             int spawnRange = 200;
-            int spawnDistance = 100;
+            int spawnDistance = 500;
             float enemyRotation = 0.0f;
             float deltaX, deltaY;
             //figure out how far away the enemy should spawn
             // spawns at least as far as the distance, with a variance of range
             int distance = (gen.Next() % spawnRange) + spawnDistance;
             //make a random angle 0-360, get the theta in the triangle
-            enemyRotation = (float)gen.Next() % 360.0f;
+            enemyRotation = (float)gen.Next() % 360.0f;            
             float theta = enemyRotation % 90;
+            theta = (float)Sprite.ToRadians(theta);
+            //enemyRotation = (float)Sprite.ToRadians(enemyRotation);
             //use that angle and the distance to find the start location of your enemy
             deltaX = distance * (float)Math.Sin(theta);
             deltaY = distance * (float)Math.Cos(theta);
@@ -205,8 +242,9 @@ namespace ProjectAwesome
                 enemyStart = new Vector2((mPlayerSprite.Position.X - deltaX),
                                         (mPlayerSprite.Position.Y - deltaY));
             }
-            //take the angle, and modify it to point the other way so enemy spawns pointing towards player
-            //enemyRotation = (enemyRotation + 180) % 360;
+            //make the angle point towards player and convert to rads so the program works
+            enemyRotation = (enemyRotation + 90.0f) % 360.0f;
+            enemyRotation = (float)Sprite.ToRadians(enemyRotation);
             //now go through the enemy list to see if you can respawn an existing enemy
             foreach (Enemy aEnemy in Enemies)
             {
@@ -219,7 +257,7 @@ namespace ProjectAwesome
                     break;
                 }
             }
-            //if all enemies are full, creat a new and add to list
+            //if all enemies are full, create a new and add to list
             if (aCreateNew == true)
             {
                 Enemy aEnemy = new Enemy();
@@ -249,12 +287,14 @@ namespace ProjectAwesome
                           null,
                           camera.Transform(GraphicsDevice));
             mPlayerSprite.Draw(this.spriteBatch);
-            spriteBatch.DrawString(debugFont, timesShot.ToString(), FontPos, Color.Black);
+            
             foreach (Enemy e in Enemies)
             {
                 if(e.alive)
                     e.Draw(this.spriteBatch);
             }
+
+            spriteBatch.DrawString(debugFont, timesShot.ToString(), FontPos, Color.Black);
             spriteBatch.End();
 
             base.Draw(gameTime);

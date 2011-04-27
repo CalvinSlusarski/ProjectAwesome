@@ -51,7 +51,7 @@ namespace ProjectAwesome
         public void Update(GameTime theGameTime)
         {                
             Random gen = new Random();  //init random gen, time based seed
-            UpdateMovement(gen);        //run the movement method with the generator
+            //UpdateMovement(gen);        //run the movement method with the generator
             UpdateProjectile(theGameTime, gen); //same thing, but for the projectiles
             
             base.Update(theGameTime, mSpeed, mRotation);
@@ -106,6 +106,8 @@ namespace ProjectAwesome
                 }
             }
         }
+        /* OUTDATED MOVEMENT METHOD
+         * I just commented this out for now --Dan
         //this should really be set to follow player but I wanted to implement this quickly
         private void UpdateMovement(Random generator)
         {
@@ -129,6 +131,7 @@ namespace ProjectAwesome
                 mSpeed = ENEMY_SPEED;
             }
         }
+         * */
         public void Spawn(Vector2 theStartPosition, int theSpeed, float theDirection)
         {
 

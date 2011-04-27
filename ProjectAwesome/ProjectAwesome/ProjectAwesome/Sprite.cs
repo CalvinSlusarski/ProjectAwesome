@@ -92,5 +92,10 @@ namespace ProjectAwesome
 
             return intersects;
         }
+        public static double ToRadians(double degrees)
+        {
+            double radians = (Math.PI / 180) * degrees;
+            return (radians);
+        }
     }
 }
