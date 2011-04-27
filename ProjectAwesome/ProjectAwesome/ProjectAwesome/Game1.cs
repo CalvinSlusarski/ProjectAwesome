@@ -94,6 +94,7 @@ namespace ProjectAwesome
             camera.Position = mPlayerSprite.Position;
 
             //added by Dan, spawns enemies
+            UpdateEnemies(gameTime, new Random());
             base.Update(gameTime);
         }
         //updates the enemy list
@@ -104,7 +105,7 @@ namespace ProjectAwesome
                 aEnemy.Update(theGameTime);
             }
             int tmp = generator.Next();
-            if (tmp%10 < 2)
+            if (tmp%10 > 2)
             {
                 SpawnEnemy();
             }
