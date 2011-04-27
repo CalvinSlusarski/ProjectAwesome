@@ -1,11 +1,13 @@
 ProjectAwesome README
---Version .1 TODO--
+--Version .2 TODO--
 --------------------------------------------------------------------------------------------
-1.1		Epic	I want to able to steer my boat
-1.1.1	Story	Keyboard to move
-1.1.2	Story	click to shoot
-1.1.3	Story	w to go forward
-1.2		Epic	I want to see Projectiles when i click
-1.2.1	Story	Mouse bound
-1.2.2	Story	I want to create a moving object
+1.4	Epic	I want enemies in the game
+1.4.1	Story	Create moving enemy sprites
+1.4.2	Story	enemy ai behavior--follow player
+1.5	Story	some sort of map system
+1.6	Epic	Collision Detection Systems
+1.6.1	Story	Enemy - player
+1.6.2	Story	My Bullet->enemy
+1.6.3	Story	Player->land?
+1.6.4	Story	enemy bullet ->player
 --------------------------------------------------------------------------------------------
