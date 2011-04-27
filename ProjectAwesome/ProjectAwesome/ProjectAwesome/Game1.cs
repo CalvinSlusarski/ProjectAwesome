@@ -26,6 +26,13 @@ namespace ProjectAwesome
         //added by Dan to get enemies in there
         List<Enemy> Enemies = new List<Enemy>();
 
+        //added by dan for text on screen
+        SpriteFont debugFont;
+        Vector2 FontPos;
+
+        //added by dan for player collision math
+        int timesShot = 0;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -54,13 +61,18 @@ namespace ProjectAwesome
             //Draw your game here
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //init spritefont for debugging
+            debugFont = Content.Load<SpriteFont>("debugFont");
+            FontPos = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
+                                    graphics.GraphicsDevice.Viewport.Height / 2);
+
+
             // init Camera
            // camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
             foreach (Enemy aEnemy in Enemies)
             {
 
                 aEnemy.LoadContent(this.Content);
-
             }
 
             mPlayerSprite = new Player(ref camera);
@@ -94,11 +106,47 @@ namespace ProjectAwesome
             camera.Position = mPlayerSprite.Position;
 
             //added by Dan, spawns enemies
-            /*******************************************************************
-             * ----------uncomment to reenable enemy spawns---------------------
-            UpdateEnemies(gameTime, new Random());
-             * */
+            ///*******************************************************************
+            // * ----------uncomment to reenable enemy spawns---------------------
+            //UpdateEnemies(gameTime, new Random());
+            // * */
+
+            //added by Dan, 
+            //handles player bullet->enemy
+            //and enemy bullet ->player
+            //collisions using the intersect method I wrote for sprite
+            UpdateCollisions();
             base.Update(gameTime);
+        }
+        private void UpdateCollisions()
+        {
+            //for each enemy and for each player's bullet, check collision
+            foreach (Enemy aEnemy in Enemies)
+            {
+                foreach (Projectile p in mPlayerSprite.mBullets)
+                {
+                    //if they intersect and the bullet is visible
+                    if ((p.intersect(aEnemy) == true)&& p.Visible)
+                    {
+                        //kill the enemy and kill the bullet
+                        aEnemy.alive = false;
+                        p.Visible = false;
+                    }
+                }
+            }
+            //for each enemies bullet check against player for collision
+            foreach (Enemy anEnemy in Enemies)
+            {
+                foreach(Projectile pr in anEnemy.mBullets)
+                {
+                    if(pr.intersect(mPlayerSprite) && pr.Visible)
+                    {
+                        //increment the times the player has been shot, kill bullet
+                        timesShot ++;
+                        pr.Visible = false;
+                    }
+                }
+            }            
         }
         //updates the enemy list
         private void UpdateEnemies(GameTime theGameTime, Random generator)
@@ -161,9 +209,11 @@ namespace ProjectAwesome
                           null,
                           camera.Transform(GraphicsDevice));
             mPlayerSprite.Draw(this.spriteBatch);
+            spriteBatch.DrawString(debugFont, timesShot.ToString(), FontPos, Color.Black);
             foreach (Enemy e in Enemies)
             {
-                e.Draw(this.spriteBatch);
+                if(e.alive)
+                    e.Draw(this.spriteBatch);
             }
             spriteBatch.End();
 

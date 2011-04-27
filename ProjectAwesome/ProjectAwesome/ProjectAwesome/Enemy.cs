@@ -31,7 +31,7 @@ namespace ProjectAwesome
         Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
 
         //projectile array to hold bullets
-        List<Projectile> mBullets = new List<Projectile>();
+        public List<Projectile> mBullets = new List<Projectile>();
         ContentManager mContentManager;
 
         //load up the content
@@ -143,11 +143,13 @@ namespace ProjectAwesome
             alive = true;
 
         }
+        
         public override void Draw(SpriteBatch theSpriteBatch)
         {
             foreach (Projectile aProjectile in mBullets)
             {
-                aProjectile.Draw(theSpriteBatch);
+                if(aProjectile.Visible)
+                    aProjectile.Draw(theSpriteBatch);
             }
             base.Draw(theSpriteBatch);
         }

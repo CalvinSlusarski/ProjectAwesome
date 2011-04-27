@@ -35,7 +35,7 @@ namespace ProjectAwesome
         float mRotation = 0.0f;
 
         //projectile array to hold bullets
-        List<Projectile> mBullets = new List<Projectile>();
+        public List<Projectile> mBullets = new List<Projectile>();
         ContentManager mContentManager;
         
 
@@ -157,7 +157,8 @@ namespace ProjectAwesome
         {
             foreach (Projectile aProjectile in mBullets)
             {
-                aProjectile.Draw(theSpriteBatch);
+                if(aProjectile.Visible)
+                    aProjectile.Draw(theSpriteBatch);
             }
             base.Draw(theSpriteBatch);
         }

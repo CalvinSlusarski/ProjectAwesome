@@ -67,6 +67,30 @@ namespace ProjectAwesome
             new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
             Color.White, Rotation, Center, Scale, SpriteEffects.None, 0);
         }
+        //checks if our sprite intersects with a sprite
+        //added by Dan
+        public Boolean intersect(Sprite sprite)
+        {
+            Boolean intersects = false;
 
+            //get box coords for our called sprite
+            Vector3 aMin = new Vector3(sprite.Position.X, sprite.Position.Y, 0.0f);
+            Vector3 aMax = new Vector3(sprite.Position.X + sprite.Size.Width,
+                sprite.Position.Y + sprite.Size.Height, 0.0f);
+
+            //get box coords for our calling sprite
+            Vector3 mMin = new Vector3(Position.X, Position.Y, 0.0f);
+            Vector3 mMax = new Vector3(Position.X + Size.Width,
+                Position.Y + Size.Height, 0.0f);
+
+            //make boxes out of the coords
+            BoundingBox aBox = new BoundingBox(aMin, aMax * new Vector3(0.99f, 0.99f, 0));
+            BoundingBox mBox = new BoundingBox(mMin, mMax * new Vector3(0.99f, 0.99f, 0));
+
+            //check if they intersect
+            intersects = mBox.Intersects(aBox);
+
+            return intersects;
+        }
     }
 }
