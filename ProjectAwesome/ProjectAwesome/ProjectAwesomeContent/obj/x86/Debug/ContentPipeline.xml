@@ -28,6 +28,15 @@
       <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
       <Time>2011-04-26T17:23:42.0925635-04:00</Time>
     </Item>
+    <Item>
+      <Source>f22.png</Source>
+      <Name>f22</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
+      <Time>2011-04-26T21:11:21.9995635-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

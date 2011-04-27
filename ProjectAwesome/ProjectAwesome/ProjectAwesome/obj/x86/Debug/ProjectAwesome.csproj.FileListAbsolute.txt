@@ -24,3 +24,4 @@ C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\
 C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\obj\x86\Debug\ProjectAwesome.pdb
 C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb
+C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb

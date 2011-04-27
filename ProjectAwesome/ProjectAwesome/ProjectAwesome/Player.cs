@@ -107,7 +107,7 @@ namespace ProjectAwesome
                     Projectile aProjectile = new Projectile();
                     aProjectile.LoadContent(mContentManager);
                     aProjectile.Fire(Position,
-                        200, mRotation);
+                        400, mRotation);
                     mBullets.Add(aProjectile);
                 }
             }

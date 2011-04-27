@@ -24,10 +24,11 @@ namespace ProjectAwesome
         const int MOVE_RIGHT = 1;
         const float ROTATE_SPEED = 0.08f;
 
-        Boolean alive = false;
-        int mSpeed = 0;
+        public Boolean alive = false;
+        int mSpeed = 10;
         int shotChance = 3;
         float mRotation = 0.0f;
+        Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
 
         //projectile array to hold bullets
         List<Projectile> mBullets = new List<Projectile>();
@@ -55,6 +56,7 @@ namespace ProjectAwesome
             
             base.Update(theGameTime, mSpeed, mRotation);
         }
+        
         //projectile control method for enemy class
         private void UpdateProjectile(GameTime theGameTime, Random generator)
         {
@@ -122,6 +124,20 @@ namespace ProjectAwesome
                 if (mRotation > 360.0f)
                     mRotation = mRotation % 360.0f;                
             }
+        }
+        public void Spawn(Vector2 theStartPosition, int theSpeed, float theDirection)
+        {
+
+            Position = theStartPosition;
+
+            mStartPosition = theStartPosition;
+
+            mSpeed = theSpeed;
+
+            mRotation = theDirection;
+
+            alive = true;
+
         }
         public override void Draw(SpriteBatch theSpriteBatch)
         {

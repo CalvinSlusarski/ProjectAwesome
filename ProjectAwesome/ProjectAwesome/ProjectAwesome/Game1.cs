@@ -23,6 +23,9 @@ namespace ProjectAwesome
         Player mPlayerSprite;
         Camera camera = new Camera();
 
+        //added by Dan to get enemies in there
+        List<Enemy> Enemies = new List<Enemy>();
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -53,7 +56,12 @@ namespace ProjectAwesome
             spriteBatch = new SpriteBatch(GraphicsDevice);
             // init Camera
            // camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
+            foreach (Enemy aEnemy in Enemies)
+            {
 
+                aEnemy.LoadContent(this.Content);
+
+            }
 
             mPlayerSprite = new Player(ref camera);
             mPlayerSprite.LoadContent(this.Content);
@@ -84,9 +92,52 @@ namespace ProjectAwesome
             mPlayerSprite.Update(gameTime);
             //Added by calvin moves camera to player position
             camera.Position = mPlayerSprite.Position;
+
+            //added by Dan, spawns enemies
             base.Update(gameTime);
         }
+        //updates the enemy list
+        private void UpdateEnemies(GameTime theGameTime, Random generator)
+        {
+            foreach (Enemy aEnemy in Enemies)
+            {
+                aEnemy.Update(theGameTime);
+            }
+            int tmp = generator.Next();
+            if (tmp%10 < 2)
+            {
+                SpawnEnemy();
+            }
+        }
+        //spawns enemies to the list
+        private void SpawnEnemy()
+        {
+            Random gen = new Random();
+            //if (mCurrentState == State.Moving)
+            //{
+                bool aCreateNew = true;
 
+                foreach (Enemy aEnemy in Enemies)
+                {
+                    if (aEnemy.alive == false)
+                    {
+                        aCreateNew = false;
+                        aEnemy.Spawn(mPlayerSprite.Position,
+                            100, (gen.Next() % 360.0f));// adjusted fire Speed
+                        break;
+                    }
+                }
+
+                if (aCreateNew == true)
+                {
+                    Enemy aEnemy = new Enemy();
+                    aEnemy.LoadContent(this.Content);
+                    aEnemy.Spawn(mPlayerSprite.Position,
+                        100, (gen.Next()%360.0f));
+                    Enemies.Add(aEnemy);
+                }
+            //}
+        }
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -106,7 +157,10 @@ namespace ProjectAwesome
                           null,
                           camera.Transform(GraphicsDevice));
             mPlayerSprite.Draw(this.spriteBatch);
-            
+            foreach (Enemy e in Enemies)
+            {
+                e.Draw(this.spriteBatch);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);
