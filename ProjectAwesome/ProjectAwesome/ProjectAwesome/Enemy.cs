@@ -17,7 +17,7 @@ namespace ProjectAwesome
         const string ENEMY_ASSETNAME = "f22";
         const int START_POSITION_X = 125;
         const int START_POSITION_Y = 245;
-        const int ENEMY_SPEED = 160;
+        const int ENEMY_SPEED = 130;
         const int MOVE_UP = -1;
         const int MOVE_DOWN = 1;
         const int MOVE_LEFT = -1;
@@ -112,17 +112,21 @@ namespace ProjectAwesome
             mSpeed = 30;
             int tmp = generator.Next();
             // 75% of the time they should turn left
-            if (tmp%4 <= 3)
+            if (tmp % 1000 <= 53)
             {
                 mRotation -= ROTATE_SPEED;
                 if (mRotation < -360.0f)
                     mRotation = mRotation % 360.0f;
             }
-            else
+            else if (tmp % 1000 >= 950)
             {
                 mRotation -= ROTATE_SPEED;
                 if (mRotation > 360.0f)
-                    mRotation = mRotation % 360.0f;                
+                    mRotation = mRotation % 360.0f;
+            }
+            else
+            {
+                mSpeed = ENEMY_SPEED;
             }
         }
         public void Spawn(Vector2 theStartPosition, int theSpeed, float theDirection)

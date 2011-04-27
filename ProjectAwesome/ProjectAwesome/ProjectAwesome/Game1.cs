@@ -105,7 +105,7 @@ namespace ProjectAwesome
                 aEnemy.Update(theGameTime);
             }
             int tmp = generator.Next();
-            if (tmp%10 > 2)
+            if (tmp%1000 <= 2)
             {
                 SpawnEnemy();
             }
