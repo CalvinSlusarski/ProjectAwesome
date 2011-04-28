@@ -22,7 +22,7 @@ namespace ProjectAwesome
         const int MOVE_DOWN = 1;
         const int MOVE_LEFT = -1;
         const int MOVE_RIGHT = 1;
-        const float ROTATE_SPEED = 0.08f;
+        const float ROTATE_SPEED = 0.05f;
 
         public Boolean alive = false;
         int mSpeed = 10;
@@ -162,21 +162,47 @@ namespace ProjectAwesome
             if (plus)
                 mRotation += change;
             else
-                mRotation -= change;
-            
+                mRotation -= change;            
         }
         public void follow(Player p)
         {
-            /* FAILED EXPERIMENT IN AI #1, uncomment for a laugh
+            /*BROKEN... i dunno why
             //we're going to cast a 2dray in front of the enemy
             //and check to see if it connects with player
             float deltaX;
             float deltaY;
             Vector2 anEnd;
             int rayDistance = 700;
-            //find the change in x and the change in y (sohcahtoa)
-            deltaX = (float)rayDistance * (float)Math.Sin(Rotation);
-            deltaY = (float)rayDistance * (float)Math.Cos(Rotation);
+            
+            //depending on rotation (pi/4 is 45 deg, 3pi/4 is 135 deg, etc)
+            //figure out if delta x and y should be a sin or cos call
+            //from sohcahtoa (google it if you forgot trig, i know i did)
+            //betwen degree (315 and 45), (135 and 225), sin is x cos is y
+            //and the other half is the other way (sin(angle) = opposite/hypotenuse)
+            if ((Rotation <= (MathHelper.Pi / 4.0f)) || (Rotation > (7.0f * (MathHelper.Pi / 4.0f))))
+            {
+                //find the change in x and the change in y (sohcahtoa)
+                deltaX = (float)rayDistance * (float)Math.Sin(Rotation);
+                deltaY = (float)rayDistance * (float)Math.Cos(Rotation);
+            }
+            else if ((Rotation > (1.0f* MathHelper.Pi) / 4.0f) && (Rotation <= (3.0f* (MathHelper.Pi / 4.0f))))
+            {
+                //find the change in x and the change in y (sohcahtoa)
+                deltaY = (float)rayDistance * (float)Math.Sin(Rotation);
+                deltaX = (float)rayDistance * (float)Math.Cos(Rotation);
+            }
+            else if ((Rotation > (3.0f * MathHelper.Pi) / 4.0f) && (Rotation <= (5.0f * (MathHelper.Pi / 4.0f))))
+            {
+                //find the change in x and the change in y (sohcahtoa)
+                deltaX = (float)rayDistance * (float)Math.Sin(Rotation);
+                deltaY = (float)rayDistance * (float)Math.Cos(Rotation);
+            }
+            else
+            {
+                //find the change in x and the change in y (sohcahtoa)
+                deltaY = (float)rayDistance * (float)Math.Sin(Rotation);
+                deltaX = (float)rayDistance * (float)Math.Cos(Rotation);
+            }
             //depending on rotation (0 is up, pi/2 rads is right, etc)
             //find the endpoint of the ray straight in front of enemy
             if (Rotation <= (MathHelper.Pi / 2.0f))
@@ -212,8 +238,51 @@ namespace ProjectAwesome
             {
                 rotate(0.08f, true);
             }
-             * */
+            */
 
+            //2nd attempt
+            //this time I'm going to try a different method.
+            //i'm going to do it by comparing angles.
+            //call the angle of the line from enemy to player angle A,
+            //the angle made by the rotation of this enemy B,
+            //and the difference between the 2 angles C.
+            //if C is less than maybe 10 degrees (pi/20 rad?) don't do anything
+            //but if B-A <= 180 degrees (pi rad), make the enemy turn left
+            //else turn right.
+
+            //if this method works, i'm going to completely get rid of ray2d.
+            //I thought it was ugly and i don't think it works right.
+
+            //at any rate, let's declare our variables required:
+            float angleA, angleC;
+            //first we figure out the angle of A
+            angleA = findAngle(p.Center);
+            //then we figure out the angle of C (b is just enemy rotation)
+            angleC = mRotation - angleA;
+            //if the absolute value of c is < about 10 degrees (pi/20 rad)
+            //don't do anything
+            if (angleC <= (MathHelper.Pi / 20))
+            {
+            }
+            //else if b-a < pi rad turn left
+            else if ((angleC < MathHelper.Pi) && (angleC > (MathHelper.Pi / 20)))
+            {
+                rotate(ROTATE_SPEED, false);
+            }
+            //else turn right
+            else
+            {
+                rotate(ROTATE_SPEED, true);
+            }
+        }
+        //returns the angle between this enemy and the destination spot
+        public float findAngle(Vector2 destination)
+        {
+            float ans = 0.0f;
+            // theta = arctan(x/y)
+            ans = (float)Math.Atan((Math.Abs(Position.X-destination.X))/
+                                    (Math.Abs(Position.Y-destination.Y)));
+            return ans;
         }
     }
 }
