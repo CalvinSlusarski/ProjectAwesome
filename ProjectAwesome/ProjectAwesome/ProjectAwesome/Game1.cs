@@ -108,51 +108,16 @@ namespace ProjectAwesome
             //added by Dan, spawns enemies
             UpdateEnemies(gameTime, new Random());
             //added by Dan, handles enemy movement AI
-            UpdateEnemyMovements();
+            foreach (Enemy en in Enemies)
+            {
+                en.follow(mPlayerSprite);
+            }
             //added by Dan,handles bullet collisions
             UpdateCollisions();
             base.Update(gameTime);
         }
-        private void UpdateEnemyMovements()
-        {
-            //for each enemy
-            foreach (Enemy anEnemy in Enemies)
-            {
-                float deltaX;
-                float deltaY;
-                Vector2 anEnd;
-                int rayDistance = 700;
-                deltaX = rayDistance * (float)Math.Sin(anEnemy.Rotation);
-                deltaY = rayDistance * (float)Math.Cos(anEnemy.Rotation);
-                if(anEnemy.Rotation <= (MathHelper.Pi/2.0f))
-                {
-                    anEnd = new Vector2(anEnemy.Position.X + deltaX,
-                                        anEnemy.Position.Y - deltaY);
-                }
-                else if((anEnemy.Rotation > (MathHelper.Pi/2.0f)) && (anEnemy.Rotation <= MathHelper.Pi))
-                {
-                    anEnd = new Vector2(anEnemy.Position.X + deltaX,
-                                        anEnemy.Position.Y + deltaY);
-                }
-                else if((anEnemy.Rotation > (MathHelper.Pi)) && (anEnemy.Rotation <= (3.0f*MathHelper.Pi)/2.0f))
-                {
-                    anEnd = new Vector2(anEnemy.Position.X - deltaX,
-                                        anEnemy.Position.Y + deltaY);
-                }
-                else
-                {
-                    anEnd = new Vector2(anEnemy.Position.X - deltaX,
-                                        anEnemy.Position.Y - deltaY);
-                }
-
-                Ray2D aRay = new Ray2D(anEnemy.Position, anEnd);
-                Rectangle playerRect = new Rectangle((int)mPlayerSprite.Position.X,(int)mPlayerSprite.Position.Y, mPlayerSprite.Size.Width, mPlayerSprite.Size.Height);
-                if(!(aRay.Intersects(playerRect)))
-                {
-                    anEnemy.Rotation += 5.8f;
-                }
-            }
-        }
+        
+        
         private void UpdateCollisions()
         {
             //for each enemy and for each player's bullet, check collision

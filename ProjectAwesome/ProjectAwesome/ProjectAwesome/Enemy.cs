@@ -66,8 +66,8 @@ namespace ProjectAwesome
                 aProjectile.Update(theGameTime);
             }
             //I initialized shotchance to like 3 up at the top, 
-            //this should give them a 3% shot to shoot a projectile
-            if ((generator.Next() % 100) < shotChance)
+            //this should give them a .3% shot to shoot a projectile in a given frame
+            if ((generator.Next() % 1000) < shotChance)
             {
                 ShootProjectile();
             }
@@ -101,7 +101,7 @@ namespace ProjectAwesome
                     Projectile aProjectile = new Projectile();
                     aProjectile.LoadContent(mContentManager);
                     aProjectile.Fire(Position,
-                        200, mRotation);
+                        400, mRotation);
                     mBullets.Add(aProjectile);
                 }
             }
@@ -155,6 +155,65 @@ namespace ProjectAwesome
                     aProjectile.Draw(theSpriteBatch);
             }
             base.Draw(theSpriteBatch);
+        }
+        //rotate the sprite from another class
+        public void rotate(float change, bool plus)
+        {
+            if (plus)
+                mRotation += change;
+            else
+                mRotation -= change;
+            
+        }
+        public void follow(Player p)
+        {
+            /* FAILED EXPERIMENT IN AI #1, uncomment for a laugh
+            //we're going to cast a 2dray in front of the enemy
+            //and check to see if it connects with player
+            float deltaX;
+            float deltaY;
+            Vector2 anEnd;
+            int rayDistance = 700;
+            //find the change in x and the change in y (sohcahtoa)
+            deltaX = (float)rayDistance * (float)Math.Sin(Rotation);
+            deltaY = (float)rayDistance * (float)Math.Cos(Rotation);
+            //depending on rotation (0 is up, pi/2 rads is right, etc)
+            //find the endpoint of the ray straight in front of enemy
+            if (Rotation <= (MathHelper.Pi / 2.0f))
+            {
+                anEnd = new Vector2(Position.X + deltaX,
+                                    Position.Y + deltaY);
+            }
+            else if ((Rotation > (MathHelper.Pi / 2.0f)) && (Rotation <= MathHelper.Pi))
+            {
+                anEnd = new Vector2(Position.X + deltaX,
+                                    Position.Y + deltaY);
+            }
+            else if ((Rotation > (MathHelper.Pi)) && (Rotation <= (3.0f * MathHelper.Pi) / 2.0f))
+            {
+                anEnd = new Vector2(Position.X + deltaX,
+                                    Position.Y + deltaY);
+            }
+            else
+            {
+                anEnd = new Vector2(Position.X + deltaX,
+                                    Position.Y + deltaY);
+            }
+
+            //create the ray in front of enemy
+            Ray2D aRay = new Ray2D(Position, anEnd);
+
+            //create the rectangle for player
+            Rectangle playerRect = new Rectangle((int)p.Position.X, (int)p.Position.Y,
+                (int)p.Position.X + p.Size.Width,
+                (int)p.Position.Y + p.Size.Height);
+            //if the ray doesn't touch the player rectangle, turn rightdd
+            if (!(aRay.Intersects(playerRect)))
+            {
+                rotate(0.08f, true);
+            }
+             * */
+
         }
     }
 }

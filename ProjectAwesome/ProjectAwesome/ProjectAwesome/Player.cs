@@ -125,15 +125,11 @@ namespace ProjectAwesome
                     (aCurrentKeyboardState.IsKeyDown(Keys.A) == true))
                 {
                     mRotation -= ROTATE_SPEED;
-                    if (mRotation < -360.0f)
-                        mRotation = mRotation % 360.0f;
                 }
                 else if ((aCurrentKeyboardState.IsKeyDown(Keys.Right) == true) ||
                     (aCurrentKeyboardState.IsKeyDown(Keys.D) == true))
                 {
                     mRotation += ROTATE_SPEED;
-                    if (mRotation > 360.0f)
-                        mRotation = mRotation % 360.0f;
                 }
 
                 if ((aCurrentKeyboardState.IsKeyDown(Keys.Up) == true) ||

@@ -37,6 +37,15 @@
       <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
       <Time>2011-04-26T17:23:42.0925635-04:00</Time>
     </Item>
+    <Item>
+      <Source>metroid.png</Source>
+      <Name>metroid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
+      <Time>2011-04-27T21:06:23.7287313-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
