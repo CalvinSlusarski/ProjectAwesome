@@ -65,10 +65,6 @@ namespace ProjectAwesome
             debugFont = Content.Load<SpriteFont>("debugFont");
             FontPos = new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
                                     graphics.GraphicsDevice.Viewport.Height / 2);
-
-
-            // init Camera
-           // camera = new Camera(graphics.GraphicsDevice.Viewport) { Limits = new Rectangle(0, 0, 3200, 600) };
             foreach (Enemy aEnemy in Enemies)
             {
 
@@ -77,6 +73,7 @@ namespace ProjectAwesome
 
             mPlayerSprite = new Player(ref camera);
             mPlayerSprite.LoadContent(this.Content);
+            SpawnEnemy();
             
         }
 
@@ -104,14 +101,8 @@ namespace ProjectAwesome
             mPlayerSprite.Update(gameTime);
             //Added by calvin moves camera to player position
             camera.Position = mPlayerSprite.Position;
-
             //added by Dan, spawns enemies
             UpdateEnemies(gameTime, new Random());
-            //added by Dan, handles enemy movement AI
-            foreach (Enemy en in Enemies)
-            {
-                en.follow(mPlayerSprite);
-            }
             //added by Dan,handles bullet collisions
             UpdateCollisions();
             base.Update(gameTime);
@@ -151,15 +142,20 @@ namespace ProjectAwesome
         //updates the enemy list
         private void UpdateEnemies(GameTime theGameTime, Random generator)
         {
+            //foreach (Enemy aEnemy in Enemies)
+            //{
+            //    aEnemy.Update(theGameTime, mPlayerSprite);
+            //}
+            //int tmp = generator.Next();
+            //if (tmp%500 <= 20)
+            //{
+            //    SpawnEnemy();
+            //}
             foreach (Enemy aEnemy in Enemies)
             {
-                aEnemy.Update(theGameTime);
+                aEnemy.Update(theGameTime, mPlayerSprite);
             }
-            int tmp = generator.Next();
-            if (tmp%500 <= 20)
-            {
-                SpawnEnemy();
-            }
+
         }
         //spawns enemies to the list
         private void SpawnEnemy()

@@ -27,3 +27,4 @@ C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\
 C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb
 C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb
+C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb

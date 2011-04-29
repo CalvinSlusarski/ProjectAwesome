@@ -27,7 +27,7 @@ namespace ProjectAwesome
 
         public Camera()
         {
-            m_Zoom = 1;
+            m_Zoom = .25f;
             m_Rotation = 0;
             m_CameraPosition = Vector2.Zero;
         }

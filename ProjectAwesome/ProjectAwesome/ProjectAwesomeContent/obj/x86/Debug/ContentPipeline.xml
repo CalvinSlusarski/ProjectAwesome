@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
-      <Time>2011-04-26T16:22:04.3335635-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
+      <Time>2011-04-26T02:42:17.1210937-04:00</Time>
     </Item>
     <Item>
       <Source>Projectile.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Projectile.xnb</Output>
-      <Time>2011-04-26T16:22:04.3515635-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Projectile.xnb</Output>
+      <Time>2011-04-26T03:07:02.5488281-04:00</Time>
     </Item>
     <Item>
       <Source>f22.png</Source>
@@ -25,17 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
-      <Time>2011-04-26T23:35:18.9015635-04:00</Time>
-    </Item>
-    <Item>
-      <Source>debugFont.spritefont</Source>
-      <Name>debugFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
-      <Time>2011-04-26T17:23:42.0925635-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
+      <Time>2011-04-26T23:40:03.9003906-04:00</Time>
     </Item>
     <Item>
       <Source>metroid.png</Source>
@@ -43,8 +34,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
-      <Time>2011-04-27T21:06:23.7287313-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
+      <Time>2011-04-28T11:58:43.1513671-04:00</Time>
+    </Item>
+    <Item>
+      <Source>debugFont.spritefont</Source>
+      <Name>debugFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
+      <Time>2011-04-26T18:36:27.8457032-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -52,10 +52,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -84,7 +84,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-04-25T20:09:12.6305635-04:00</Value>
+        <Value>2011-04-25T14:30:52.3378906-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
