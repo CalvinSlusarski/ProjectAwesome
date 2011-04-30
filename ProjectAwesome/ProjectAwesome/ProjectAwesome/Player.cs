@@ -23,14 +23,32 @@ namespace ProjectAwesome
         // adjustable variables
         int mSpeed = 0;
         float mRotation = 0.0f;
-        bool attack;
+        private bool playerAttack = false;
+        public bool Attack {
+            get
+            {
+                bool returnMe = false;
+                if (playerAttack == true)
+                {
+                    playerAttack = false;
+                    returnMe = true;
+                }
+                return returnMe;
+            }
+        }
         // Projectile attack
         //public List<Projectile> mBullets = new List<Projectile>();
+
+        //Enumerator states used to asking if player is moving
+        enum State
+        {
+            Moving
+        }
+        State mCurrentState = State.Moving;
 
         public Player()
         {
             // Musings from GameObject with Love
-            attack = false;
             base.Group = identity.Player;
             base.CanDraw = true;
         }
@@ -47,6 +65,35 @@ namespace ProjectAwesome
         new public void Update(GameTime theGameTime)
         {
             UpdateMovement();
+            Controls.Update();
+            if (mCurrentState == State.Moving)
+            {
+                if (Controls.playerRotateLeft == true)
+                {
+                    mRotation -= ROTATE_SPEED;
+                }
+                else if (Controls.playerRotateRight == true)
+                {
+                    mRotation += ROTATE_SPEED;
+                }
+
+                if (Controls.playerMoveForward == true)
+                {
+                    mSpeed = PLAYER_SPEED;
+                    //camera.Move(Position, true);
+
+
+                }
+                else if (Controls.playerMoveBackward == true)
+                {
+                    mSpeed = PLAYER_SPEED * -1;
+                    //camera.Move(Position, true);
+                }
+                if (Controls.playerShoot == true)
+                {
+                    playerAttack = true;
+                }
+            }
             base.Update(calcMovementVect(theGameTime), mRotation);
         }
         // TODO create physics class
@@ -62,12 +109,11 @@ namespace ProjectAwesome
         }
 
         //Assume player is not moving...
-        private void UpdateMovement() { mSpeed = 0; }
-        public void RotateLeft() { mRotation -= ROTATE_SPEED; }
-        public void RotateRight() { mRotation += ROTATE_SPEED; }
-        public void MoveForward() { mSpeed = PLAYER_SPEED; }
-        public void MoveBackward() { mSpeed = PLAYER_SPEED * -1; }
-        public bool Attack { get { return attack; } set { attack = value; }}
+        private void UpdateMovement() {mSpeed = 0; }
+        public void RotateLeft() { if (mCurrentState == State.Moving)mRotation -= ROTATE_SPEED; }
+        public void RotateRight() { if (mCurrentState == State.Moving)mRotation += ROTATE_SPEED; }
+        public void MoveForward() { if (mCurrentState == State.Moving)mSpeed = PLAYER_SPEED; }
+        public void MoveBackward() { if (mCurrentState == State.Moving)mSpeed = PLAYER_SPEED * -1; }
         //public float MRotation { get { return mRotation; } }
 
         public override void Draw(SpriteBatch theSpriteBatch)

@@ -20,7 +20,7 @@ namespace ProjectAwesome
         Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
         int mSpeed = 300;
         
-        //Constructor, I WANT A START LOCATION when init!
+        //Constructor
         public Projectile()
         {
             // Musings from GameObject with Love
@@ -34,15 +34,13 @@ namespace ProjectAwesome
             Sprite.position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, PROJECTILE_ASSETNAME);
         }
-
         //update object
         new public void Update(GameTime theGameTime)
         {
             if (Vector2.Distance(mStartPosition, Position) > MAX_DISTANCE)
             {
                 Visible = false;
-            }
-            
+            }     
             if (Visible == true)
             {
                 base.Update(theGameTime, mSpeed, mRotation);
@@ -51,28 +49,18 @@ namespace ProjectAwesome
         
         public override void Draw(SpriteBatch theSpriteBatch)
         {
-
             if (Visible == true)
             {
-
                 base.Draw(theSpriteBatch);
-
             }
-
         }
         public void Fire(Vector2 theStartPosition, int theSpeed, float theDirection)
         {
-
             Position = theStartPosition;
-
             mStartPosition = theStartPosition;
-
             mSpeed = theSpeed;
-
             mRotation = theDirection;
-
             Visible = false;
-
         }
     }
 }

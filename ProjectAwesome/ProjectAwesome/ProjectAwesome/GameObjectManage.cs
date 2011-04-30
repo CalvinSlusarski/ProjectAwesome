@@ -15,7 +15,7 @@ namespace ProjectAwesome
     class GameObjectManage
     {
         // USER INTERFACE CONTROLLER CLASS DEALS DIRECTLY WITH THE PLAY CLASS
-        Controls controls = new Controls();
+        //Controls controls = new Controls();// now static
         // All ingame Objects are stored here
         //List<GameObject> gameObjectList = new List<GameObject>();
         public Player player;
@@ -44,7 +44,6 @@ namespace ProjectAwesome
         public void Update(GameTime theGameTime)
         {
             testPlayerProjectile();
-            controls.Update(player);
             player.Update(theGameTime);
             foreach (Enemy enemy in enemyObjectList) { enemy.Update(theGameTime); }
             foreach (Projectile projectile in projectileObjectList) { projectile.Update(theGameTime); }//<-- fix in projectile class
@@ -67,10 +66,10 @@ namespace ProjectAwesome
             //we want param's, like location
             enemyObjectList.Add(new Enemy());
         }
-        public void createProjectile()
+        public void createPlayerProjectile()
         {
             Projectile tempProjectile = new Projectile();
-            tempProjectile.Fire(player.Position/*player.sprite.center*/, 400, player.Rotation);// adjusted fire Speed
+            tempProjectile.Fire(/*player.Position*/player.sprite.center, 400, player.Rotation);// adjusted fire Speed
             tempProjectile.LoadContent(contentManager);
             projectileObjectList.Add(tempProjectile);
         }
@@ -78,8 +77,7 @@ namespace ProjectAwesome
         {
             if (player.Attack == true)
             {
-                createProjectile();
-                player.Attack = false;
+                createPlayerProjectile();
             }
         }
         // SHOULD NEVER BE USED
