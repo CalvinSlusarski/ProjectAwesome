@@ -21,6 +21,7 @@ namespace ProjectAwesome
         public Player player;
         List<Enemy> enemyObjectList = new List<Enemy>();
         List<Projectile> projectileObjectList = new List<Projectile>();
+        Background currentBackground = new Background();
         ContentManager contentManager;
         // Create GameObject
         // i want create objects using methods from this class!
@@ -36,6 +37,8 @@ namespace ProjectAwesome
             player.LoadContent(theContentManager);
             foreach (Enemy enemy in enemyObjectList) { enemy.LoadContent(theContentManager); }
             foreach (Projectile projectile in projectileObjectList) { projectile.LoadContent(theContentManager); }
+            // BACKGROUND DURKA DO
+            currentBackground.LoadContent(theContentManager);
             contentManager = theContentManager;
         }
         public void Update(GameTime theGameTime)
@@ -49,6 +52,7 @@ namespace ProjectAwesome
         }
         public virtual void Draw(SpriteBatch theSpriteBatch)
         {
+            currentBackground.Draw(theSpriteBatch);
             player.Draw(theSpriteBatch);
             foreach (Enemy enemy in enemyObjectList) { enemy.Draw(theSpriteBatch); }
             foreach (Projectile projectile in projectileObjectList) { projectile.Draw(theSpriteBatch); }

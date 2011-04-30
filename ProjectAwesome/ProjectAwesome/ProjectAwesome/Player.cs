@@ -25,7 +25,7 @@ namespace ProjectAwesome
         float mRotation = 0.0f;
         bool attack;
         // Projectile attack
-        public List<Projectile> mBullets = new List<Projectile>();
+        //public List<Projectile> mBullets = new List<Projectile>();
 
         public Player()
         {
@@ -39,7 +39,7 @@ namespace ProjectAwesome
         public void LoadContent(ContentManager theContentManager)
         {
 
-            foreach (Projectile aProjectile in mBullets) { aProjectile.LoadContent(theContentManager);}
+            //foreach (Projectile aProjectile in mBullets) { aProjectile.LoadContent(theContentManager);}
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, PLAYER_ASSETNAME);
         }

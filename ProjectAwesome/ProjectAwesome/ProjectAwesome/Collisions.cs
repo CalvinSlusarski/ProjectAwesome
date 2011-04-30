@@ -122,5 +122,37 @@ namespace ProjectAwesome
             }
             #endregion
         }
+
+        // Dan code
+        //    private void UpdateCollisions()
+        //{
+        //    //for each enemy and for each player's bullet, check collision
+        //    foreach (Enemy aEnemy in Enemies)
+        //    {
+        //        foreach (Projectile p in mPlayerSprite.mBullets)
+        //        {
+        //            //if they intersect and the bullet is visible
+        //            if ((p.intersect(aEnemy) == true)&& p.Visible)
+        //            {
+        //                //kill the enemy and kill the bullet
+        //                aEnemy.alive = false;
+        //                p.Visible = false;
+        //            }
+        //        }
+        //    }
+        //    //for each enemies bullet check against player for collision
+        //    foreach (Enemy anEnemy in Enemies)
+        //    {
+        //        foreach(Projectile pr in anEnemy.mBullets)
+        //        {
+        //            if(pr.intersect(mPlayerSprite) && pr.Visible)
+        //            {
+        //                //increment the times the player has been shot, kill bullet
+        //                timesShot ++;
+        //                pr.Visible = false;
+        //            }
+        //        }
+        //    }            
+        //}
     }
 }

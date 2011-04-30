@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
-      <Time>2011-04-26T02:42:17.1210937-04:00</Time>
+      <Time>2011-04-30T02:32:26.1884765-04:00</Time>
     </Item>
     <Item>
       <Source>Projectile.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Projectile.xnb</Output>
-      <Time>2011-04-26T03:07:02.5488281-04:00</Time>
+      <Time>2011-04-30T02:32:26.1904297-04:00</Time>
     </Item>
     <Item>
       <Source>f22.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
-      <Time>2011-04-26T23:40:03.9003906-04:00</Time>
+      <Time>2011-04-30T02:32:26.1914062-04:00</Time>
     </Item>
     <Item>
       <Source>metroid.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
-      <Time>2011-04-28T11:58:43.1513671-04:00</Time>
+      <Time>2011-04-30T02:32:26.1923828-04:00</Time>
     </Item>
     <Item>
       <Source>debugFont.spritefont</Source>
@@ -44,7 +44,16 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
-      <Time>2011-04-26T18:36:27.8457032-04:00</Time>
+      <Time>2011-04-30T02:32:26.1904297-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Background.jpg</Source>
+      <Name>Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Background.xnb</Output>
+      <Time>2011-04-30T02:41:23.0234375-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

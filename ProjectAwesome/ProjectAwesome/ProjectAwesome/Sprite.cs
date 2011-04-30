@@ -63,5 +63,12 @@ namespace ProjectAwesome
             new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
             Color.White, Rotation, Center, Scale, SpriteEffects.None, 0);
         }
+        //Draw the sprite to the screen overload for layer
+        public void DrawLayer(SpriteBatch theSpriteBatch, int layer)
+        {
+            theSpriteBatch.Draw(mSpriteTexture, position,
+           new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
+           Color.White, Rotation, Center, Scale, SpriteEffects.None, layer);
+        }
     }
 }
