@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 
 namespace ProjectAwesome
 {
-    class Player : Sprite
+    class Player: GameObject
     {
         // Constants for adjusting game variables
         const string PLAYER_ASSETNAME = "Boat";
@@ -22,142 +20,64 @@ namespace ProjectAwesome
         const int MOVE_LEFT = -1;
         const int MOVE_RIGHT = 1;
         const float ROTATE_SPEED = 0.025f;
-        Camera camera;
-
-        //Enumerator states used to asking if player is moving
-        enum State
-        {
-            Moving
-        }
-        State mCurrentState = State.Moving;
-
+        // adjustable variables
         int mSpeed = 0;
         float mRotation = 0.0f;
-
-        //projectile array to hold bullets
+        bool attack;
+        // Projectile attack
         public List<Projectile> mBullets = new List<Projectile>();
-        ContentManager mContentManager;
-        
 
-        KeyboardState mPreviousKeyboardState;
-        MouseState mouseStateCurrent;
-        MouseState mouseStatePrevious;
-        public Player(ref Camera camera)
+        public Player()
         {
-            this.camera = camera;
+            // Musings from GameObject with Love
+            attack = false;
+            base.Group = identity.Player;
+            base.CanDraw = true;
         }
+
+
         public void LoadContent(ContentManager theContentManager)
         {
-            mContentManager = theContentManager;
-            
 
-            foreach (Projectile aProjectile in mBullets)
-            {
-
-                aProjectile.LoadContent(theContentManager);
-
-            }
+            foreach (Projectile aProjectile in mBullets) { aProjectile.LoadContent(theContentManager);}
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, PLAYER_ASSETNAME);
         }
-
-        public void Update(GameTime theGameTime)
+        // new hides old update
+        new public void Update(GameTime theGameTime)
         {
-            KeyboardState aCurrentKeyboardState = Keyboard.GetState();
-            mouseStateCurrent = Mouse.GetState(); 
-
-            UpdateMovement(aCurrentKeyboardState);
-            UpdateProjectile(theGameTime, aCurrentKeyboardState);
-            mPreviousKeyboardState = aCurrentKeyboardState;
-            mouseStatePrevious = mouseStateCurrent;
-            base.Update(theGameTime, mSpeed, mRotation);
+            UpdateMovement();
+            base.Update(calcMovementVect(theGameTime), mRotation);
         }
-        private void UpdateProjectile(GameTime theGameTime, KeyboardState aCurrentKeyboardState)
+        // TODO create physics class
+        public Vector2 calcMovementVect(GameTime theGameTime)
         {
-            foreach (Projectile aProjectile in mBullets)
-            {
-                aProjectile.Update(theGameTime);
-            }
-            
-            if ((aCurrentKeyboardState.IsKeyDown(Keys.Space) == true && mPreviousKeyboardState.IsKeyDown(Keys.Space) == false)||
-                (mouseStateCurrent.LeftButton == ButtonState.Pressed && mouseStatePrevious.LeftButton != ButtonState.Pressed))
-            {
-                ShootProjectile();
-            }
-        }
-        private void ShootProjectile()
-        {
-            if (mCurrentState == State.Moving)
-            {
-                bool aCreateNew = true;
+            Rotation = mRotation;
+            return new Vector2((Position.X + (float)(mSpeed * Math.Cos(sprite.Rotation)) * (float)theGameTime.ElapsedGameTime.TotalSeconds),
+                (Position.Y + (float)(mSpeed * Math.Sin(sprite.Rotation)) * (float)theGameTime.ElapsedGameTime.TotalSeconds));
+            //OLD logic possible to directly change variables too
+            //Position.X += (float)(mSpeed * Math.Cos(sprite.Rotation)) * (float)theGameTime.ElapsedGameTime.TotalSeconds;
+            //Position.Y += (float)(mSpeed * Math.Sin(sprite.Rotation)) * (float)theGameTime.ElapsedGameTime.TotalSeconds;
 
-                foreach (Projectile aProjectile in mBullets)
-                {
-                    if (aProjectile.Visible == false)
-                    {
-                        aCreateNew = false;
-                        aProjectile.Fire(Position,
-                            400, mRotation);// adjusted fire Speed
-                        break;
-                    }
-                }
-
-                if (aCreateNew == true)
-                {
-                    Projectile aProjectile = new Projectile();
-                    aProjectile.LoadContent(mContentManager);
-                    aProjectile.Fire(Position,
-                        400, mRotation);
-                    mBullets.Add(aProjectile);
-                }
-            }
         }
 
+        //Assume player is not moving...
+        private void UpdateMovement() { mSpeed = 0; }
+        public void RotateLeft() { mRotation -= ROTATE_SPEED; }
+        public void RotateRight() { mRotation += ROTATE_SPEED; }
+        public void MoveForward() { mSpeed = PLAYER_SPEED; }
+        public void MoveBackward() { mSpeed = PLAYER_SPEED * -1; }
+        public bool Attack { get { return attack; } set { attack = value; }}
+        //public float MRotation { get { return mRotation; } }
 
-        //Assume player is not moving
-        private void UpdateMovement(KeyboardState aCurrentKeyboardState)
-        {
-            mSpeed = 0;
-            //Dan Reed added WASD support
-            if (mCurrentState == State.Moving)
-            {
-                if ((aCurrentKeyboardState.IsKeyDown(Keys.Left) == true) ||
-                    (aCurrentKeyboardState.IsKeyDown(Keys.A) == true))
-                {
-                    mRotation -= ROTATE_SPEED;
-                }
-                else if ((aCurrentKeyboardState.IsKeyDown(Keys.Right) == true) ||
-                    (aCurrentKeyboardState.IsKeyDown(Keys.D) == true))
-                {
-                    mRotation += ROTATE_SPEED;
-                }
-
-                if ((aCurrentKeyboardState.IsKeyDown(Keys.Up) == true) ||
-                    (aCurrentKeyboardState.IsKeyDown(Keys.W) == true))
-                {
-                    mSpeed = PLAYER_SPEED;
-                    //camera.Move(Position, true);
-
-
-                }
-                else if ((aCurrentKeyboardState.IsKeyDown(Keys.Down) == true) ||
-                    (aCurrentKeyboardState.IsKeyDown(Keys.S) == true))
-                {
-                    mSpeed = PLAYER_SPEED * -1;
-                    //camera.Move(Position, true);
-                }
-                
-            }
-        }
         public override void Draw(SpriteBatch theSpriteBatch)
         {
-            foreach (Projectile aProjectile in mBullets)
-            {
-                if(aProjectile.Visible)
-                    aProjectile.Draw(theSpriteBatch);
-            }
             base.Draw(theSpriteBatch);
         }
     }
 }
+
+
+
+
 

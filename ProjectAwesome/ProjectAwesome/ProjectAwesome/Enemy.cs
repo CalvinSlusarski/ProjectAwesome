@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System;
 
 namespace ProjectAwesome
 {
-    class Enemy : Sprite
+    class Enemy: GameObject
     {
         // Constants for adjusting game variables
         const string ENEMY_ASSETNAME = "f22";
@@ -24,13 +21,13 @@ namespace ProjectAwesome
         const int MOVE_RIGHT = 1;
         const float ROTATE_SPEED = 0.05f;
 
-        public Boolean alive = false;
+        public bool alive = false;
         int mSpeed = 10;
         int shotChance = 3;
         float mRotation = 0.0f;
         Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
 
-        //projectile array to hold bullets
+        //ProjectileV2 array to hold bullets
         public List<Projectile> mBullets = new List<Projectile>();
         ContentManager mContentManager;
 
@@ -38,7 +35,7 @@ namespace ProjectAwesome
         public void LoadContent(ContentManager theContentManager)
         {
             mContentManager = theContentManager;
-            //load up the projectile content for each bullet in the array
+            //load up the ProjectileV2 content for each bullet in the array
             foreach (Projectile aProjectile in mBullets)
             {
                 aProjectile.LoadContent(theContentManager);
@@ -52,28 +49,28 @@ namespace ProjectAwesome
         {                
             Random gen = new Random();  //init random gen, time based seed
             //UpdateMovement(gen);        //run the movement method with the generator
-            UpdateProjectile(theGameTime, gen); //same thing, but for the projectiles
+            UpdateProjectileV2(theGameTime, gen); //same thing, but for the ProjectileV2s
             follow(p);
             base.Update(theGameTime, mSpeed, mRotation);
         }
         
-        //projectile control method for enemy class
-        private void UpdateProjectile(GameTime theGameTime, Random generator)
+        //ProjectileV2 control method for enemy class
+        private void UpdateProjectileV2(GameTime theGameTime, Random generator)
         {
-            //for each projectile, update it
+            //for each ProjectileV2, update it
             foreach (Projectile aProjectile in mBullets)
             {
                 aProjectile.Update(theGameTime);
             }
             //I initialized shotchance to like 3 up at the top, 
-            //this should give them a .3% shot to shoot a projectile in a given frame
+            //this should give them a .3% shot to shoot a ProjectileV2 in a given frame
             if ((generator.Next() % 1000) < shotChance)
             {
-                ShootProjectile();
+                ShootProjectileV2();
             }
         }
-        //projectile creation method for enemy class
-        private void ShootProjectile()
+        //ProjectileV2 creation method for enemy class
+        private void ShootProjectileV2()
         {
             //if the enemy is alive
             if (alive == true)
@@ -97,7 +94,7 @@ namespace ProjectAwesome
                 //if you reach the end of the bullet list without changing the create flag
                 if (aCreateNew == true)
                 {
-                    //create a new projectile, init it, add it to the list, and shoot it
+                    //create a new ProjectileV2, init it, add it to the list, and shoot it
                     Projectile aProjectile = new Projectile();
                     aProjectile.LoadContent(mContentManager);
                     aProjectile.Fire(Position,
@@ -157,29 +154,3 @@ namespace ProjectAwesome
         }
     }
 }
-/* OUTDATED MOVEMENT METHOD
- * I just commented this out for now --Dan
-//this should really be set to follow player but I wanted to implement this quickly
-private void UpdateMovement(Random generator)
-{
-    mSpeed = 30;
-    int tmp = generator.Next();
-    // 75% of the time they should turn left
-    if (tmp % 1000 <= 103)
-    {
-        mRotation -= ROTATE_SPEED;
-        if (mRotation < -360.0f)
-            mRotation = mRotation % 360.0f;
-    }
-    else if (tmp % 1000 >= 950)
-    {
-        mRotation += ROTATE_SPEED;
-        if (mRotation > 360.0f)
-            mRotation = mRotation % 360.0f;
-    }
-    else
-    {
-        mSpeed = ENEMY_SPEED;
-    }
-}
- * */

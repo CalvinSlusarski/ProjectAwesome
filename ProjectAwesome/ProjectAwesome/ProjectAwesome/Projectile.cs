@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
@@ -11,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ProjectAwesome
 {
-    class Projectile: Sprite
+    class Projectile: GameObject
     {
         //constants for adjusting game values
         const string PROJECTILE_ASSETNAME = "Projectile";
@@ -19,33 +14,29 @@ namespace ProjectAwesome
         const int MAX_DISTANCE = 500;
         const int START_POSITION_X = 150;
         const int START_POSITION_Y = 150;
-
-        //enum to detect state
-        //enum State
-        //{
-        //    Moving
-        //}
-        //init state to moving
-        //State mCurrentState = State.Moving;
-
         
         float mRotation = 0.0f;
-        public Boolean Visible = false;
+        public bool Visible = false;
         Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
         int mSpeed = 300;
         
-
-        //KeyboardState mPreviousKeyboardState;
-       
+        //Constructor, I WANT A START LOCATION when init!
+        public Projectile()
+        {
+            // Musings from GameObject with Love
+            base.Group = identity.Projectile;
+            base.CanDraw = true;
+        }
         //load content
         public void LoadContent(ContentManager theContentManager)
         {
-            Position = new Vector2(START_POSITION_X, START_POSITION_Y);
+            Visible = true;
+            Sprite.position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, PROJECTILE_ASSETNAME);
         }
 
         //update object
-        public void Update(GameTime theGameTime)
+        new public void Update(GameTime theGameTime)
         {
             if (Vector2.Distance(mStartPosition, Position) > MAX_DISTANCE)
             {
@@ -54,7 +45,6 @@ namespace ProjectAwesome
             
             if (Visible == true)
             {
-
                 base.Update(theGameTime, mSpeed, mRotation);
             }
         }
@@ -81,11 +71,8 @@ namespace ProjectAwesome
 
             mRotation = theDirection;
 
-            Visible = true;
+            Visible = false;
 
         }
-
-
-        
     }
 }
