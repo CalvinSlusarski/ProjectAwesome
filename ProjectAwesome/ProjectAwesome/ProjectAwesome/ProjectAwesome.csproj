@@ -110,22 +110,17 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="Controls.cs" />
-    <Compile Include="Enemy.cs" />
     <Compile Include="Collisions.cs" />
-    <Compile Include="EnemyV2.cs" />
-    <Compile Include="Game2.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="Game1.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameObjectManage.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerV2.cs" />
     <Compile Include="Projectile.cs" />
-    <Compile Include="ProjectileV2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
     <Compile Include="Ray2D.cs" />
     <Compile Include="Sprite.cs" />
-    <Compile Include="SpriteV2.cs" />
     <Compile Include="UID.cs" />
   </ItemGroup>
   <ItemGroup>
