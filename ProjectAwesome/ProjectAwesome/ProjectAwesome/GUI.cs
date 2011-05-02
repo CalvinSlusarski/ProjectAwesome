@@ -14,18 +14,22 @@ namespace ProjectAwesome
     /// </summary>
     class GUI: GameObject
     {
-        const string ASSETUPPERFRAME = "UpperFrame";
-        const int START_POSITION_X = 100;
-        const int START_POSITION_Y = 100;
+        const string ASSETUPPERFRAME = "gui";
+        const int START_POSITION_X = 400;
+        const int START_POSITION_Y = 300;
         public void LoadContent(ContentManager theContentManager)
         {
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, ASSETUPPERFRAME);
-            sprite.Scale = .5f;
+            sprite.Scale = 1.51f;
         }
         new public void Draw(SpriteBatch theSpriteBatch)
         {
+            // top left corner of gui
             base.sprite.Draw(theSpriteBatch);
+
+            // top right
+            //base.sprite.Draw(theSpriteBatch,new Vector2(700,100), SpriteEffects.FlipHorizontally);
         }
     }
 }

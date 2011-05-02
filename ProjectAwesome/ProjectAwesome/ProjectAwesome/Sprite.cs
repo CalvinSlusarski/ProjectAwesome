@@ -63,6 +63,13 @@ namespace ProjectAwesome
             new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
             Color.White, Rotation, Center, Scale, SpriteEffects.None, 0);
         }
+        //Draw the sprite to the screen
+        public virtual void Draw(SpriteBatch theSpriteBatch, Vector2 newPosition, SpriteEffects spriteEffects)
+        {
+            theSpriteBatch.Draw(mSpriteTexture, newPosition,
+           new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
+           Color.White, Rotation, Center, Scale, spriteEffects, 0);
+        }
         //Draw the sprite to the screen overload for layer, currently only used by background for back layer
         //Scaled map*10
         public void DrawLayer(SpriteBatch theSpriteBatch, int layer)
