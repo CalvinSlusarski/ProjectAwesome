@@ -11,8 +11,8 @@ namespace ProjectAwesome
     class Background: GameObject
     {
         const string ASSETNAME = "Background";
-        const int START_POSITION_X = 125;
-        const int START_POSITION_Y = 245;
+        const int START_POSITION_X = 0;
+        const int START_POSITION_Y = 0;
         public void LoadContent(ContentManager theContentManager)
         {
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
