@@ -22,6 +22,7 @@ namespace ProjectAwesome
         List<Enemy> enemyObjectList = new List<Enemy>();
         List<Projectile> projectileObjectList = new List<Projectile>();
         Background currentBackground = new Background();
+        GUI GUI = new GUI();
         ContentManager contentManager;
         // Create GameObject
         // i want create objects using methods from this class!
@@ -39,6 +40,7 @@ namespace ProjectAwesome
             foreach (Projectile projectile in projectileObjectList) { projectile.LoadContent(theContentManager); }
             // BACKGROUND DURKA DO and sweetness!
             currentBackground.LoadContent(theContentManager);
+            GUI.LoadContent(theContentManager);
             contentManager = theContentManager;
         }
         public void Update(GameTime theGameTime)
@@ -47,15 +49,20 @@ namespace ProjectAwesome
             foreach (Enemy enemy in enemyObjectList) { enemy.Update(theGameTime); }
             foreach (Projectile projectile in projectileObjectList) { projectile.Update(theGameTime); }//<-- fix in projectile class
             testPlayerProjectile();
-
+            GUI.Update(theGameTime);
         }
         public virtual void Draw(SpriteBatch theSpriteBatch)
         {
             currentBackground.Draw(theSpriteBatch);
             player.Draw(theSpriteBatch);
             foreach (Enemy enemy in enemyObjectList) { enemy.Draw(theSpriteBatch); }
-            foreach (Projectile projectile in projectileObjectList) { projectile.Draw(theSpriteBatch); }
+            foreach (Projectile projectile in projectileObjectList) { projectile.Draw(theSpriteBatch); }   
         }
+        public virtual void DrawGUI(SpriteBatch theSpriteBatch)
+        {
+            GUI.Draw(theSpriteBatch);
+        }
+        #region create Methods...
         public void createPlayer()
         {
             player = new Player();
@@ -73,6 +80,11 @@ namespace ProjectAwesome
             tempProjectile.LoadContent(contentManager);
             projectileObjectList.Add(tempProjectile);
         }
+        public void createGUI()
+        {
+        }
+        #endregion
+
         public void testPlayerProjectile()
         {
             if (player.Attack == true)

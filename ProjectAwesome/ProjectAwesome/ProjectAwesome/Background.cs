@@ -10,7 +10,8 @@ namespace ProjectAwesome
 {
     class Background: GameObject
     {
-        const string ASSETNAME = "Background";
+        // was const
+        string ASSETNAME = "Background";
         const int START_POSITION_X = 0;
         const int START_POSITION_Y = 0;
         public void LoadContent(ContentManager theContentManager)
@@ -21,6 +22,10 @@ namespace ProjectAwesome
         new public void Draw(SpriteBatch theSpriteBatch)
         {
             base.sprite.DrawLayer(theSpriteBatch, 1);
+        }
+        public void assetName(string newName)
+        {
+             ASSETNAME = newName;
         }
     }
 }

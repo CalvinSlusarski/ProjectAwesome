@@ -18,7 +18,6 @@ namespace ProjectAwesome
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
         Camera camera = new Camera();
 
         GameObjectManage Gom = new GameObjectManage();
@@ -49,8 +48,9 @@ namespace ProjectAwesome
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //init spritefont for debugging
             Gom.LoadContent(this.Content);
-           //mPlayerSprite = new Player(ref camera);
-           //mPlayerSprite.LoadContent(this.Content);
+            //mPlayerSprite = new Player(ref camera);
+            //mPlayerSprite.LoadContent(this.Content);
+
         }
 
         /// <summary>
@@ -69,6 +69,7 @@ namespace ProjectAwesome
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -87,7 +88,7 @@ namespace ProjectAwesome
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            
             // TODO: Add your drawing code here
             // Added by Calvin to draw boat
             //spriteBatch.Begin();
@@ -102,7 +103,10 @@ namespace ProjectAwesome
                           camera.Transform(GraphicsDevice));
             Gom.Draw(spriteBatch);
             spriteBatch.End();
-
+            spriteBatch.Begin();
+            // This is where we draw the gui
+            Gom.DrawGUI(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

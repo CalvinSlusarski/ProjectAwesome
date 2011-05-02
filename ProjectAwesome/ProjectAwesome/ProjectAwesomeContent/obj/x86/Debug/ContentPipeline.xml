@@ -55,6 +55,15 @@
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Background.xnb</Output>
       <Time>2011-05-02T02:34:24.3330078-04:00</Time>
     </Item>
+    <Item>
+      <Source>UpperFrame.png</Source>
+      <Name>UpperFrame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\UpperFrame.xnb</Output>
+      <Time>2011-05-02T13:14:16.6894531-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
