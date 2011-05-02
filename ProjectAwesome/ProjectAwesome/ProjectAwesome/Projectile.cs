@@ -12,17 +12,25 @@ namespace ProjectAwesome
         const string PROJECTILE_ASSETNAME = "Projectile";
         const int projectileSpeed = 250;
         const int MAX_DISTANCE = 500;
-        const int START_POSITION_X = 150;
-        const int START_POSITION_Y = 150;
+        const int START_POSITION_X = 0;
+        const int START_POSITION_Y = 0;
         
         float mRotation = 0.0f;
         public bool Visible = false;
         Vector2 mStartPosition = new Vector2(START_POSITION_X, START_POSITION_Y);
         int mSpeed = 300;
-        
+
         //Constructor
         public Projectile()
         {
+            // Musings from GameObject with Love
+            base.Group = identity.Projectile;
+            base.CanDraw = true;
+        }
+        public Projectile(Vector2 newVect, float rotation)
+        {
+            mStartPosition = newVect;
+            mRotation = rotation;
             // Musings from GameObject with Love
             base.Group = identity.Projectile;
             base.CanDraw = true;
@@ -31,7 +39,8 @@ namespace ProjectAwesome
         public void LoadContent(ContentManager theContentManager)
         {
             Visible = true;
-            Sprite.position = new Vector2(START_POSITION_X, START_POSITION_Y);
+            Sprite.position = mStartPosition;//new Vector2(START_POSITION_X, START_POSITION_Y);
+            Sprite.Rotation = mRotation;
             base.LoadContent(theContentManager, PROJECTILE_ASSETNAME);
         }
         //update object
@@ -54,13 +63,13 @@ namespace ProjectAwesome
                 base.Draw(theSpriteBatch);
             }
         }
-        public void Fire(Vector2 theStartPosition, int theSpeed, float theDirection)
-        {
-            Position = theStartPosition;
-            mStartPosition = theStartPosition;
-            mSpeed = theSpeed;
-            mRotation = theDirection;
-            Visible = false;
-        }
+        //public void Fire(Vector2 theStartPosition, int theSpeed, float theDirection)
+        //{
+        //    Position = theStartPosition;
+        //    mStartPosition = theStartPosition;
+        //    mSpeed = theSpeed;
+        //    mRotation = theDirection;
+        //    Visible = false;
+        //}
     }
 }

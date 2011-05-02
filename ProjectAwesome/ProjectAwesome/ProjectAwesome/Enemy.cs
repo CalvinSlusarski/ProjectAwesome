@@ -85,8 +85,8 @@ namespace ProjectAwesome
                     if (aProjectile.Visible == false)
                     {
                         aCreateNew = false;     //set the flag back to false to avoid a loop
-                        aProjectile.Fire(Position,  
-                            400, mRotation);// adjusted fire speed
+                        //aProjectile.Fire(Position,  
+                        //    400, mRotation);// adjusted fire speed
                         break;
                     }
                 }
@@ -97,8 +97,8 @@ namespace ProjectAwesome
                     //create a new ProjectileV2, init it, add it to the list, and shoot it
                     Projectile aProjectile = new Projectile();
                     aProjectile.LoadContent(mContentManager);
-                    aProjectile.Fire(Position,
-                        400, mRotation);
+                    //aProjectile.Fire(Position,
+                    //    400, mRotation);
                     mBullets.Add(aProjectile);
                 }
             }

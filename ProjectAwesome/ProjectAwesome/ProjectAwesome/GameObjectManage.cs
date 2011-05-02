@@ -37,16 +37,16 @@ namespace ProjectAwesome
             player.LoadContent(theContentManager);
             foreach (Enemy enemy in enemyObjectList) { enemy.LoadContent(theContentManager); }
             foreach (Projectile projectile in projectileObjectList) { projectile.LoadContent(theContentManager); }
-            // BACKGROUND DURKA DO
+            // BACKGROUND DURKA DO and sweetness!
             currentBackground.LoadContent(theContentManager);
             contentManager = theContentManager;
         }
         public void Update(GameTime theGameTime)
         {
-            testPlayerProjectile();
             player.Update(theGameTime);
             foreach (Enemy enemy in enemyObjectList) { enemy.Update(theGameTime); }
             foreach (Projectile projectile in projectileObjectList) { projectile.Update(theGameTime); }//<-- fix in projectile class
+            testPlayerProjectile();
 
         }
         public virtual void Draw(SpriteBatch theSpriteBatch)
@@ -68,8 +68,8 @@ namespace ProjectAwesome
         }
         public void createPlayerProjectile()
         {
-            Projectile tempProjectile = new Projectile();
-            tempProjectile.Fire(/*player.Position*/player.sprite.center, 400, player.Rotation);// adjusted fire Speed
+            //projectileObjectList.Clear();
+            Projectile tempProjectile = new Projectile(player.Position, player.Rotation);
             tempProjectile.LoadContent(contentManager);
             projectileObjectList.Add(tempProjectile);
         }
@@ -80,7 +80,7 @@ namespace ProjectAwesome
                 createPlayerProjectile();
             }
         }
-        // SHOULD NEVER BE USED
+        // temp dunno why i still have these
         public void create() { }
         public void delete() { }
     }
