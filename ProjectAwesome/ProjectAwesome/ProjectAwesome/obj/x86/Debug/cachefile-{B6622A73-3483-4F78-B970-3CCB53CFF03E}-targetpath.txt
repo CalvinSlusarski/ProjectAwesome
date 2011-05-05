@@ -2,7 +2,8 @@ Content\Boat.xnb
 Content\Projectile.xnb
 Content\f22.xnb
 Content\metroid.xnb
-Content\debugFont.xnb
 Content\Background.xnb
 Content\UpperFrame.xnb
 Content\gui.xnb
+Content\debugFont.xnb
+Content\Ocean.xnb

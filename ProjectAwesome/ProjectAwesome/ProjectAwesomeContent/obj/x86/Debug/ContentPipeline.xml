@@ -38,15 +38,6 @@
       <Time>2011-05-02T02:34:24.336914-04:00</Time>
     </Item>
     <Item>
-      <Source>debugFont.spritefont</Source>
-      <Name>debugFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
-      <Time>2011-05-02T02:34:24.3359375-04:00</Time>
-    </Item>
-    <Item>
       <Source>Background.jpg</Source>
       <Name>Background</Name>
       <Importer>TextureImporter</Importer>
@@ -72,6 +63,24 @@
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\gui.xnb</Output>
       <Time>2011-05-02T17:07:37.9658203-04:00</Time>
+    </Item>
+    <Item>
+      <Source>debugFont.spritefont</Source>
+      <Name>debugFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
+      <Time>2011-05-02T02:34:24.3359375-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Ocean.png</Source>
+      <Name>Ocean</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb</Output>
+      <Time>2011-05-04T21:13:01.625-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

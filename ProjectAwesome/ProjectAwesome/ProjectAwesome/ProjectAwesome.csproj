@@ -16,8 +16,10 @@
     <XnaProfile>Reach</XnaProfile>
     <XnaCrossPlatformGroupID>d7e050ba-783e-451a-ae24-9290cb62906e</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
-    <ApplicationIcon>Game.ico</ApplicationIcon>
-    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <Thumbnail>
+    </Thumbnail>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -107,28 +109,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Background.cs" />
-    <Compile Include="Camera.cs" />
-    <Compile Include="Collider.cs" />
-    <Compile Include="Controls.cs" />
-    <Compile Include="Collisions.cs" />
-    <Compile Include="Enemy.cs" />
-    <Compile Include="Game1.cs" />
-    <Compile Include="GameObject.cs" />
-    <Compile Include="GameObjectManage.cs" />
-    <Compile Include="GUI.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Projectile.cs" />
+    <Compile Include="InGame\Ocean.cs" />
+    <Compile Include="InGame\Camera.cs" />
+    <Compile Include="InGame\Collider.cs" />
+    <Compile Include="InGame\Collisions.cs" />
+    <Compile Include="InGame\Controls.cs" />
+    <Compile Include="InGame\Enemy.cs" />
+    <Compile Include="InGame\Game1.cs" />
+    <Compile Include="InGame\GameObject.cs" />
+    <Compile Include="InGame\GameObjectManage.cs" />
+    <Compile Include="InGame\GUI.cs" />
+    <Compile Include="InGame\Player.cs" />
+    <Compile Include="InGame\Program.cs" />
+    <Compile Include="InGame\Projectile.cs" />
+    <Compile Include="InGame\Ray2D.cs" />
+    <Compile Include="InGame\Sprite.cs" />
+    <Compile Include="InGame\UID.cs" />
+    <Compile Include="ScreenManager\GameScreen.cs" />
+    <Compile Include="ScreenManager\InputState.cs" />
+    <Compile Include="ScreenManager\ScreenManager.cs" />
+    <Compile Include="Screens\BackgroundScreen.cs" />
+    <Compile Include="Screens\Game.cs" />
+    <Compile Include="Screens\GameplayScreen.cs" />
+    <Compile Include="Screens\LoadingScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\MenuEntry.cs" />
+    <Compile Include="Screens\MenuScreen.cs" />
+    <Compile Include="Screens\MessageBoxScreen.cs" />
+    <Compile Include="Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Screens\PauseMenuScreen.cs" />
+    <Compile Include="Screens\PlayerIndexEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Ray2D.cs" />
-    <Compile Include="Sprite.cs" />
-    <Compile Include="UID.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Boat.png" />
-    <Content Include="Game.ico" />
-    <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectAwesomeContent\ProjectAwesomeContent.contentproj">

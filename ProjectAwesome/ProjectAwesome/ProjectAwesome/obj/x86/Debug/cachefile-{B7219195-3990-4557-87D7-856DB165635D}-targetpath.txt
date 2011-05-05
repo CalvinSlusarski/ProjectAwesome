@@ -1,0 +1,13 @@
+Content\blank.xnb
+Content\gradient.xnb
+Content\menufont.xnb
+Content\gamefont.xnb
+Content\Boat.xnb
+Content\f22.xnb
+Content\gui.xnb
+Content\metroid.xnb
+Content\Projectile.xnb
+Content\UpperFrame.xnb
+Content\debugFont.xnb
+Content\background2.xnb
+Content\Background.xnb
