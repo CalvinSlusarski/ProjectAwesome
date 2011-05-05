@@ -42,13 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boat.png">
-      <Name>Boat</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Projectile.png">
       <Name>Projectile</Name>
       <Importer>TextureImporter</Importer>
@@ -100,6 +93,13 @@
   <ItemGroup>
     <Compile Include="Ocean.png">
       <Name>Ocean</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boat.png">
+      <Name>Boat</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
-      <Time>2011-05-02T02:34:24.3339843-04:00</Time>
+      <Time>2011-05-04T21:34:00.319336-04:00</Time>
     </Item>
     <Item>
       <Source>Projectile.png</Source>
@@ -80,7 +80,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb</Output>
-      <Time>2011-05-04T21:13:01.625-04:00</Time>
+      <Time>2011-05-04T21:28:34.3417969-04:00</Time>
+    </Item>
+    <Item>
+      <Source>BoatV3.png</Source>
+      <Name>BoatV3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\BoatV3.xnb</Output>
+      <Time>2011-05-02T02:34:24.3339843-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

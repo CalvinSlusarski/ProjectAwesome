@@ -32,3 +32,4 @@ C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\UpperFrame.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\gui.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb
+C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\BoatV3.xnb
