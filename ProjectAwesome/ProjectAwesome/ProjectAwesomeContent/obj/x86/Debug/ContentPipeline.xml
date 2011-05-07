@@ -74,13 +74,31 @@
       <Time>2011-05-02T02:34:24.3359375-04:00</Time>
     </Item>
     <Item>
+      <Source>refraction.fx</Source>
+      <Name>refraction</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\refraction.xnb</Output>
+      <Time>2011-05-07T11:40:11.3320312-04:00</Time>
+    </Item>
+    <Item>
       <Source>Ocean.png</Source>
       <Name>Ocean</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb</Output>
-      <Time>2011-05-04T21:28:34.3417969-04:00</Time>
+      <Time>2011-05-07T12:37:15.4589843-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Ocean foam.jpg</Source>
+      <Name>Ocean_OLD</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean_OLD.xnb</Output>
+      <Time>2011-05-07T12:21:26.805664-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

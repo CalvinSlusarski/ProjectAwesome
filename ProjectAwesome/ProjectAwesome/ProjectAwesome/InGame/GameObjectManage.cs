@@ -21,7 +21,7 @@ namespace ProjectAwesome
         public Player player;
         List<Enemy> enemyObjectList = new List<Enemy>();
         List<Projectile> projectileObjectList = new List<Projectile>();
-        Ocean currentBackground = new Ocean();
+        //Ocean currentBackground = new Ocean();
         GUI GUI = new GUI();
         ContentManager contentManager;
         // Create GameObject
@@ -39,7 +39,7 @@ namespace ProjectAwesome
             foreach (Enemy enemy in enemyObjectList) { enemy.LoadContent(theContentManager); }
             foreach (Projectile projectile in projectileObjectList) { projectile.LoadContent(theContentManager); }
             // BACKGROUND DURKA DO and sweetness!
-            currentBackground.LoadContent(theContentManager);
+            //currentBackground.LoadContent(theContentManager);
             GUI.LoadContent(theContentManager);
             contentManager = theContentManager;
         }
@@ -53,7 +53,7 @@ namespace ProjectAwesome
         }
         public virtual void Draw(SpriteBatch theSpriteBatch)
         {
-            currentBackground.Draw(theSpriteBatch);
+            //currentBackground.Draw(theSpriteBatch);
             player.Draw(theSpriteBatch);
             foreach (Enemy enemy in enemyObjectList) { enemy.Draw(theSpriteBatch); }
             foreach (Projectile projectile in projectileObjectList) { projectile.Draw(theSpriteBatch); }   

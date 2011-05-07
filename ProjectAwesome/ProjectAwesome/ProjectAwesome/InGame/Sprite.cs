@@ -24,7 +24,7 @@ namespace ProjectAwesome
             set { center = value; }
         }
         //The texture object used when drawing the sprite
-        private Texture2D mSpriteTexture;
+        public Texture2D mSpriteTexture;
 
         //The asset name for the Sprite's Texture
         public string AssetName;
@@ -76,7 +76,7 @@ namespace ProjectAwesome
         {
             theSpriteBatch.Draw(mSpriteTexture, position,
            new Rectangle(0, 0, mSpriteTexture.Width, mSpriteTexture.Height),
-           Color.White, Rotation, Center, Scale*1.5f, SpriteEffects.None, layer);
+           Color.White, Rotation, Center, Scale * 1.5f, SpriteEffects.None, layer);
         }
     }
 }

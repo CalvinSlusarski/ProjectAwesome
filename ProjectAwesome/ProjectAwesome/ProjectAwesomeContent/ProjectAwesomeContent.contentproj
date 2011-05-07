@@ -91,15 +91,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ocean.png">
-      <Name>Ocean</Name>
+    <Compile Include="Boat.png">
+      <Name>Boat</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boat.png">
-      <Name>Boat</Name>
+    <Compile Include="refraction.fx">
+      <Name>refraction</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ocean foam.jpg">
+      <Name>Ocean_OLD</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ocean.png">
+      <Name>Ocean</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
