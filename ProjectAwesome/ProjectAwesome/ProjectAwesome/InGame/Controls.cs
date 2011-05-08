@@ -15,9 +15,13 @@ namespace ProjectAwesome
         public static bool playerMoveBackward = false;
         public static bool playerShoot = false;
         public static bool playerPause = false;
+
+        //sound junk by dan
         public static bool playSound1 = false;
         public static bool playSound2 = false;
         public static bool playSound3 = false;
+        public static bool nextSong = false;
+
         //MouseState mouseStateCurrent;
         // all keyboard actions take place here!
         // TODO: ADD METHODS AND INTERFACE FOR KEYBINDING!
@@ -74,6 +78,11 @@ namespace ProjectAwesome
             {
                 playSound3 = true;
             }
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.L) == true) &&
+                !(mPreviousKeyboardState.IsKeyDown(Keys.L)))
+            {
+                nextSong = true;
+            }
         }
         private static void set()
         {
@@ -86,6 +95,7 @@ namespace ProjectAwesome
             playSound1 = false;
             playSound2 = false;
             playSound3 = false;
+            nextSong = false;
         }
     }
 }

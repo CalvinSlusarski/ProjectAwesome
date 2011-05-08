@@ -23,9 +23,15 @@ namespace ProjectAwesome
         ContentManager content;
         float pauseAlpha;
         GameObjectManage Gom = new GameObjectManage();
+
+        //stuff for sound by Dan
         AudioEngine aengine;
         SoundBank soundBank;
         WaveBank waveBank;
+        Song mySong;
+        MediaLibrary sampleMediaLibrary;
+        Random rand;
+
         public Game1()
         {
             //graphics = new GraphicsDeviceManager(this);
@@ -35,6 +41,8 @@ namespace ProjectAwesome
             aengine = new AudioEngine("test.xgs");
             soundBank = new SoundBank(aengine, "Sound Bank.xsb");
             waveBank = new WaveBank(aengine, "Wave Bank.xwb");
+            sampleMediaLibrary = new MediaLibrary();
+            rand = new Random();
         }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -60,6 +68,15 @@ namespace ProjectAwesome
             //init spritefont for debugging
             Gom.LoadContent(content);
             //background
+
+            //song
+            MediaPlayer.Stop(); // stop current audio playback 
+
+            // generate a random valid index into Albums
+            int i = rand.Next(0, sampleMediaLibrary.Albums.Count - 1);
+            int j = rand.Next(0, sampleMediaLibrary.Albums[i].Songs.Count - 1);
+            // play the first track from the album
+            MediaPlayer.Play(sampleMediaLibrary.Albums[i].Songs[j]);
 
         }
 
@@ -112,6 +129,12 @@ namespace ProjectAwesome
             {
                 Cue cue = soundBank.GetCue("snd3");
                 cue.Play();
+            }
+            if (MediaPlayer.State == MediaState.Stopped || Controls.nextSong ==true)
+            {
+                int i = rand.Next(0, sampleMediaLibrary.Albums.Count - 1);
+                int j = rand.Next(0, sampleMediaLibrary.Albums[i].Songs.Count - 1);
+                MediaPlayer.Play(sampleMediaLibrary.Albums[i].Songs[j]);
             }
         }
      
