@@ -1,3 +1,4 @@
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Dan\ProjectAwesome\calvin\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\test.xml

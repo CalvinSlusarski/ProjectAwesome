@@ -34,3 +34,15 @@ C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\refraction.xnb
 C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean_OLD.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Background.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\UpperFrame.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\gui.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean_OLD.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\refraction.xnb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\test.xgs
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Wave Bank.xwb
+C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Sound Bank.xsb

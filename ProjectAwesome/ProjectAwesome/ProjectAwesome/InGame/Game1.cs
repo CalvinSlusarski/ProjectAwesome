@@ -23,13 +23,18 @@ namespace ProjectAwesome
         ContentManager content;
         float pauseAlpha;
         GameObjectManage Gom = new GameObjectManage();
-
+        AudioEngine aengine;
+        SoundBank soundBank;
+        WaveBank waveBank;
         public Game1()
         {
             //graphics = new GraphicsDeviceManager(this);
             //graphics.PreferredBackBufferHeight = 600;
             //graphics.PreferredBackBufferWidth = 800;
             //Content.RootDirectory = "Content";
+            aengine = new AudioEngine("test.xgs");
+            soundBank = new SoundBank(aengine, "Sound Bank.xsb");
+            waveBank = new WaveBank(aengine, "Wave Bank.xwb");
         }
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -92,6 +97,21 @@ namespace ProjectAwesome
                 //Added by calvin moves camera to player position
                 camera.Position = Gom.player.Position;//mPlayerSprite.Position;
                 //base.Update(gameTime);
+            }
+            if (Controls.playSound1 == true)
+            {
+                Cue cue = soundBank.GetCue("snd1");
+                cue.Play();
+            }
+            if (Controls.playSound2 == true)
+            {
+                Cue cue = soundBank.GetCue("snd2");
+                cue.Play();
+            }
+            if (Controls.playSound3 == true)
+            {
+                Cue cue = soundBank.GetCue("snd3");
+                cue.Play();
             }
         }
      

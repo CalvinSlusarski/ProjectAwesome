@@ -6,6 +6,7 @@ namespace ProjectAwesome
     static class Controls
     {
         static KeyboardState mPreviousKeyboardState = Keyboard.GetState();
+        static KeyboardState aCurrentKeyboardState;
         static MouseState mouseStatePrevious = Mouse.GetState();
         // Control Flags
         public static bool playerRotateRight = false;
@@ -14,13 +15,17 @@ namespace ProjectAwesome
         public static bool playerMoveBackward = false;
         public static bool playerShoot = false;
         public static bool playerPause = false;
+        public static bool playSound1 = false;
+        public static bool playSound2 = false;
+        public static bool playSound3 = false;
         //MouseState mouseStateCurrent;
         // all keyboard actions take place here!
         // TODO: ADD METHODS AND INTERFACE FOR KEYBINDING!
         public static void Update()
         {
             set();
-            KeyboardState aCurrentKeyboardState = Keyboard.GetState();
+            mPreviousKeyboardState = aCurrentKeyboardState;
+            aCurrentKeyboardState = Keyboard.GetState();
             MouseState aMouseStateCurrent = Mouse.GetState();
 
             if ((aCurrentKeyboardState.IsKeyDown(Keys.Left) == true) ||
@@ -54,6 +59,21 @@ namespace ProjectAwesome
             {
                 playerPause = true;
             }
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.N) == true) &&
+                !(mPreviousKeyboardState.IsKeyDown(Keys.N)))
+            {
+                playSound1 = true;
+            }
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.B) == true) &&
+                !(mPreviousKeyboardState.IsKeyDown(Keys.B)))
+            {
+                playSound2 = true;
+            }
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.V) == true) &&
+                !(mPreviousKeyboardState.IsKeyDown(Keys.V)))
+            {
+                playSound3 = true;
+            }
         }
         private static void set()
         {
@@ -63,6 +83,9 @@ namespace ProjectAwesome
             playerMoveBackward = false;
             playerShoot = false;
             playerPause = false;
+            playSound1 = false;
+            playSound2 = false;
+            playSound3 = false;
         }
     }
 }

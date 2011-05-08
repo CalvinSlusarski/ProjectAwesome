@@ -124,6 +124,7 @@
     <Compile Include="InGame\Projectile.cs" />
     <Compile Include="InGame\Ray2D.cs" />
     <Compile Include="InGame\Sprite.cs" />
+    <Compile Include="InGame\Timer.cs" />
     <Compile Include="InGame\UID.cs" />
     <Compile Include="ScreenManager\GameScreen.cs" />
     <Compile Include="ScreenManager\InputState.cs" />

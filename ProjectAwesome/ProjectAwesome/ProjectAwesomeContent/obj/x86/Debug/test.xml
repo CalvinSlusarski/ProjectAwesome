@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sections>
+  <WaveBank Name="Wave Bank">Wave Bank
+{
+    Name = Wave Bank;
+    Xbox File = Xbox\Wave Bank.xwb;
+    Windows File = Win\Wave Bank.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Seek Tables = 1;
+    Compression Preset Name = &lt;none&gt;;
+    Bank Last Revised Low = 3243543210;
+    Bank Last Revised High = 30149945;
+
+    Wave
+    {
+        Name = snd1;
+        File = F:\snd1.wav;
+        Build Settings Last Modified Low = 2647310163;
+        Build Settings Last Modified High = 30149945;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 58;
+            Play Region Length = 251904;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 708801280;
+            Last Modified High = 30149945;
+        }
+    }
+
+    Wave
+    {
+        Name = snd2;
+        File = F:\snd2.wav;
+        Build Settings Last Modified Low = 2731550311;
+        Build Settings Last Modified High = 30149945;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 58;
+            Play Region Length = 307200;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 868801280;
+            Last Modified High = 30149945;
+        }
+    }
+
+    Wave
+    {
+        Name = snd3;
+        File = F:\snd3.wav;
+        Build Settings Last Modified Low = 2731550311;
+        Build Settings Last Modified High = 30149945;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 58;
+            Play Region Length = 364032;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1128801280;
+            Last Modified High = 30149945;
+        }
+    }
+
+    Wave
+    {
+        Name = testsound;
+        File = F:\testsound.wav;
+        Build Settings Last Modified Low = 2778662393;
+        Build Settings Last Modified High = 30149945;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 58;
+            Play Region Length = 222720;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3541806336;
+            Last Modified High = 30149884;
+        }
+    }
+}
+
+</WaveBank>
+</Sections>
