@@ -1,9 +1,0 @@
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\bin\x86\Debug\Content\shipanimated.xnb
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\bin\x86\Debug\argAnimation.exe
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\bin\x86\Debug\argAnimation.pdb
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\obj\x86\Debug\argAnimation.exe
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\obj\x86\Debug\argAnimation.pdb
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\bin\x86\Debug\Content\Sea.xnb
-C:\Users\Calvin\ProjectAwesome\argAnimation\argAnimation\argAnimation\bin\x86\Debug\Content\Sea2.xnb
