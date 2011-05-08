@@ -21,7 +21,7 @@ namespace ProjectAwesome
         {
             Position = new Vector2(START_POSITION_X, START_POSITION_Y);
             base.LoadContent(theContentManager, ASSETNAME);
-            sprite.Scale = .5f;
+            sprite.Scale = .45f;
             // moving effect
             refractionEffect = theContentManager.Load<Effect>("refraction");
         }

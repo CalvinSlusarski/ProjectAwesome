@@ -23,8 +23,6 @@ namespace ProjectAwesome
         ContentManager content;
         float pauseAlpha;
         GameObjectManage Gom = new GameObjectManage();
-        // background manager
-        Ocean currentBackground = new Ocean();
 
         public Game1()
         {
@@ -57,9 +55,6 @@ namespace ProjectAwesome
             //init spritefont for debugging
             Gom.LoadContent(content);
             //background
-            currentBackground.LoadContent(content);
-            //mPlayerSprite = new Player(ref camera);
-            //mPlayerSprite.LoadContent(this.Content);
 
         }
 
@@ -108,12 +103,7 @@ namespace ProjectAwesome
         {
             //GraphicsDevice.Clear(Color.CornflowerBlue);
             ScreenManager.GraphicsDevice.Clear(Color.CornflowerBlue);
-            // TODO: Add your drawing code here
-            // Added by Calvin to draw boat
-            //spriteBatch.Begin();
-            //currentBackground.DrawRefract(gameTime, spriteBatch);
-            // background here!
-            currentBackground.DrawRefract(gameTime, spriteBatch, ScreenManager.GraphicsDevice);
+            Gom.DrawOcean(gameTime, spriteBatch, ScreenManager.GraphicsDevice);
             spriteBatch.Begin(SpriteSortMode.BackToFront,
                           BlendState.AlphaBlend,
                           null,
