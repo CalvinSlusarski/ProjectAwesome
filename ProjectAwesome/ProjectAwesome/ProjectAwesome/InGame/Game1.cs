@@ -25,9 +25,9 @@ namespace ProjectAwesome
         GameObjectManage Gom = new GameObjectManage();
 
         //stuff for sound by Dan
-        AudioEngine aengine;
-        SoundBank soundBank;
-        WaveBank waveBank;
+        //AudioEngine aengine;
+        //SoundBank soundBank;
+        //WaveBank waveBank;
         MediaLibrary sampleMediaLibrary;
         Random rand;
 
@@ -37,9 +37,9 @@ namespace ProjectAwesome
             //graphics.PreferredBackBufferHeight = 600;
             //graphics.PreferredBackBufferWidth = 800;
             //Content.RootDirectory = "Content";
-            aengine = new AudioEngine("test.xgs");
-            soundBank = new SoundBank(aengine, "Sound Bank.xsb");
-            waveBank = new WaveBank(aengine, "Wave Bank.xwb");
+            //aengine = new AudioEngine("test.xgs");
+            //soundBank = new SoundBank(aengine, "Sound Bank.xsb");
+            //waveBank = new WaveBank(aengine, "Wave Bank.xwb");
             sampleMediaLibrary = new MediaLibrary();
             rand = new Random();
         }
@@ -114,7 +114,7 @@ namespace ProjectAwesome
                 camera.Position = Gom.player.Position;//mPlayerSprite.Position;
                 //base.Update(gameTime);
             }
-            if (Controls.playSound1 == true)
+            /*if (Controls.playSound1 == true)
             {
                 Cue cue = soundBank.GetCue("snd1");
                 cue.Play();
@@ -128,7 +128,7 @@ namespace ProjectAwesome
             {
                 Cue cue = soundBank.GetCue("snd3");
                 cue.Play();
-            }
+            }*/
             if (Controls.stopSong == true)
             {
                 MediaPlayer.Stop();
