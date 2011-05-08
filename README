@@ -1,15 +1,18 @@
 ProjectAwesome README
---Version .2 TODO--
+--Version .3 TODO--
 ::--------------------------------------------------------------------------------------------::
-1.4	Epic	I want enemies in the game
-1.4.1	Story	Create moving enemy sprites
-1.4.2	Story	enemy ai behavior--follow player
-1.5	Story	some sort of map system
-1.6	Epic	Collision Detection Systems
-1.6.1	Story	Enemy - player
-1.6.2	Story	My Bullet->enemy
-1.6.3	Story	Player->land?
-1.6.4	Story	enemy bullet ->player
+Story #	Category	Story	Who?	Status
+3.1	Epic	I Want a GUI		
+3.1.1	Story	I want to see it	Calvin	Checked in
+3.1.2 	Story	I want to be able to click stuff		Ready
+3.2	Epic	I want sound !	Dan	In progress
+3.2.1	Story	To load from my pc	Dan	In progress
+3.2.2	Story	Sound Effects!	Dan	In progress
+3.2.3	Story 	Music!	Dan	In progress
+3.3	Epic	I want an Ocean!	Calvin	Checked in
+3.3.1	Story	Texture	Calvin	Checked in
+3.3.2	Story	Shader	Calvin	Checked in
+3.4	Epic	Create Menu	Calvin	Checked in
 ::--------------------------------------------------------------------------------------------::
 ::New Structure::
 GameObject: all ingame objects inherit.

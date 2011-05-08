@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Projectile.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Projectile.xnb</Output>
+      <Time>2011-05-02T02:34:24.3349609-04:00</Time>
     </Item>
     <Item>
       <Source>f22.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\f22.xnb</Output>
+      <Time>2011-05-02T02:34:24.3359375-04:00</Time>
     </Item>
     <Item>
       <Source>metroid.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\metroid.xnb</Output>
+      <Time>2011-05-02T02:34:24.336914-04:00</Time>
     </Item>
     <Item>
       <Source>Background.jpg</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Background.xnb</Output>
-      <Time>2011-05-08T03:32:55.615527-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Background.xnb</Output>
+      <Time>2011-05-02T02:34:24.3330078-04:00</Time>
     </Item>
     <Item>
       <Source>UpperFrame.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\UpperFrame.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\UpperFrame.xnb</Output>
+      <Time>2011-05-02T13:14:16.6894531-04:00</Time>
     </Item>
     <Item>
       <Source>gui.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\gui.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\gui.xnb</Output>
+      <Time>2011-05-02T17:07:37.9658203-04:00</Time>
     </Item>
     <Item>
       <Source>Boat.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
-      <Time>2011-05-08T03:32:55.615527-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Boat.xnb</Output>
+      <Time>2011-05-04T21:34:00.319336-04:00</Time>
     </Item>
     <Item>
       <Source>Ocean foam.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean_OLD.xnb</Output>
-      <Time>2011-05-08T03:32:55.615527-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean_OLD.xnb</Output>
+      <Time>2011-05-07T12:21:26.805664-04:00</Time>
     </Item>
     <Item>
       <Source>Ocean.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb</Output>
-      <Time>2011-05-08T03:32:55.631127-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\Ocean.xnb</Output>
+      <Time>2011-05-07T12:37:15.4589843-04:00</Time>
     </Item>
     <Item>
       <Source>debugFont.spritefont</Source>
@@ -88,8 +88,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
-      <Time>2011-05-08T03:32:55.646727-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\debugFont.xnb</Output>
+      <Time>2011-05-02T02:34:24.3359375-04:00</Time>
     </Item>
     <Item>
       <Source>refraction.fx</Source>
@@ -97,8 +97,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\refraction.xnb</Output>
-      <Time>2011-05-08T03:32:55.6623271-04:00</Time>
+      <Output>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\refraction.xnb</Output>
+      <Time>2011-05-07T11:40:11.3320312-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -106,39 +106,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Dan\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesomeContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Calvin\ProjectAwesome\ProjectAwesome\ProjectAwesome\ProjectAwesome\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-05-08T03:19:28.5217048-04:00</Value>
+        <Value>2011-04-25T14:30:52.3378906-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

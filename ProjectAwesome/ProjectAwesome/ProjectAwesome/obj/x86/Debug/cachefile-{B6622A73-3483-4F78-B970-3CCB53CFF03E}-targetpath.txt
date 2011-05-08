@@ -9,6 +9,3 @@ Content\Ocean_OLD.xnb
 Content\Ocean.xnb
 Content\debugFont.xnb
 Content\refraction.xnb
-Content\test.xgs
-Content\Wave Bank.xwb
-Content\Sound Bank.xsb
