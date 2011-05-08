@@ -28,7 +28,6 @@ namespace ProjectAwesome
         AudioEngine aengine;
         SoundBank soundBank;
         WaveBank waveBank;
-        Song mySong;
         MediaLibrary sampleMediaLibrary;
         Random rand;
 
@@ -71,7 +70,7 @@ namespace ProjectAwesome
 
             //song
             MediaPlayer.Stop(); // stop current audio playback 
-
+            MediaPlayer.Volume = 0.35f;
             // generate a random valid index into Albums
             int i = rand.Next(0, sampleMediaLibrary.Albums.Count - 1);
             int j = rand.Next(0, sampleMediaLibrary.Albums[i].Songs.Count - 1);
@@ -130,7 +129,12 @@ namespace ProjectAwesome
                 Cue cue = soundBank.GetCue("snd3");
                 cue.Play();
             }
-            if (MediaPlayer.State == MediaState.Stopped || Controls.nextSong ==true)
+            if (Controls.stopSong == true)
+            {
+                MediaPlayer.Stop();
+            }
+            if ((MediaPlayer.State == MediaState.Stopped || Controls.nextSong ==true)
+                && Controls.stopSong == false)
             {
                 int i = rand.Next(0, sampleMediaLibrary.Albums.Count - 1);
                 int j = rand.Next(0, sampleMediaLibrary.Albums[i].Songs.Count - 1);

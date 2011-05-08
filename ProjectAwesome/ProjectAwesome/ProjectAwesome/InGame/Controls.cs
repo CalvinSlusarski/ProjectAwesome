@@ -21,6 +21,8 @@ namespace ProjectAwesome
         public static bool playSound2 = false;
         public static bool playSound3 = false;
         public static bool nextSong = false;
+        public static bool playSong = false;
+        public static bool stopSong = false;
 
         //MouseState mouseStateCurrent;
         // all keyboard actions take place here!
@@ -82,6 +84,14 @@ namespace ProjectAwesome
                 !(mPreviousKeyboardState.IsKeyDown(Keys.L)))
             {
                 nextSong = true;
+            }
+            if ((aCurrentKeyboardState.IsKeyDown(Keys.K) == true) &&
+                !(mPreviousKeyboardState.IsKeyDown(Keys.K)))
+            {
+                if (stopSong == true)
+                    stopSong = false;
+                else
+                    stopSong = true;
             }
         }
         private static void set()
